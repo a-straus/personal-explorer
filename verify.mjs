@@ -24,6 +24,8 @@ const pass = (n, ok, note='') => { results.push({ n, ok, note }); console.log(`$
 
 const data = JSON.parse(readFileSync(join(__dirname,'data.json'),'utf8'));
 const TOTAL = data.items.length;
+const TERMINAL_IN_DATA = data.items.filter(i=>['Passed','Rejected'].includes(i.status)).length;
+const DEFAULT_VISIBLE = TOTAL - TERMINAL_IN_DATA; // Hide Passed/Rejected is ON by default
 
 function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
 
@@ -69,9 +71,13 @@ async function main(){
     await page.goto(BASE,{waitUntil:'networkidle'});
     await page.waitForSelector('.card',{timeout:8000});
 
-    // counts
+    // counts — all 185 render when terminal filter is off; default view hides Passed/Rejected
+    const defaultCount = await page.locator('.card').count();
+    pass(`default Browse shows all non-terminal items (${DEFAULT_VISIBLE})`, defaultCount===DEFAULT_VISIBLE, `${defaultCount}/${DEFAULT_VISIBLE}`);
+    await page.locator('#hideTerminal').uncheck(); await sleep(150);
     const cardCount = await page.locator('.card').count();
-    pass('Browse renders; card count == total items', cardCount===TOTAL, `${cardCount}/${TOTAL}`);
+    pass('all items render (card count == total)', cardCount===TOTAL, `${cardCount}/${TOTAL}`);
+    await page.locator('#hideTerminal').check(); await sleep(120);
     pass('zero console errors', consoleErrors.length===0, consoleErrors.slice(0,2).join(' | '));
     pass('no third-party network requests', thirdParty.length===0, thirdParty.slice(0,2).join(' | '));
 
@@ -108,7 +114,7 @@ async function main(){
     pass('combined filters AND together (events + Go)', evGo>0 && evGo<=eventsCount, `${evGo}`);
     // clear
     await page.locator('#clearFilt').click(); await sleep(150);
-    pass('clear filters restores all', (await page.locator('.card').count())===TOTAL);
+    pass('clear filters restores all', (await page.locator('.card').count())===DEFAULT_VISIBLE);
 
     // search
     await page.locator('#search').fill('tutoring');
@@ -116,7 +122,7 @@ async function main(){
     const sCount = await page.locator('.card').count();
     pass('search narrows results', sCount>0 && sCount<TOTAL, `${sCount}`);
     await page.locator('#search').fill(''); await sleep(150);
-    pass('clearing search restores all', (await page.locator('.card').count())===TOTAL);
+    pass('clearing search restores all', (await page.locator('.card').count())===DEFAULT_VISIBLE);
 
     // hide terminal default ON
     const hideChecked = await page.locator('#hideTerminal').isChecked();
@@ -164,7 +170,7 @@ async function main(){
     await page.locator('.tab[data-view="board"]').click(); await sleep(250);
     const colTitles = await page.locator('.board .col h3').allInnerTexts();
     const pipeline=['New','Reviewing','Applied','Interview','Offer','Accepted','Rejected','Passed'];
-    const allCols = pipeline.every(s=>colTitles.some(t=>t.startsWith(s)));
+    const allCols = pipeline.every(s=>colTitles.some(t=>t.toLowerCase().startsWith(s.toLowerCase())));
     pass('Board renders full pipeline columns even when empty', allCols, colTitles.map(t=>t.split('\n')[0]).join(','));
     await page.screenshot({path:join(VDIR,'board-1280.png'),fullPage:false});
 
@@ -201,7 +207,7 @@ async function main(){
     await page2.waitForSelector('.card',{timeout:8000}).catch(()=>{});
     const fileCards = await page2.locator('.card').count();
     const fileBadge = await page2.locator('#storeTxt').innerText();
-    pass('file:// fallback renders all cards', fileCards===TOTAL, `${fileCards}`);
+    pass('file:// fallback renders cards', fileCards===DEFAULT_VISIBLE, `${fileCards}/${DEFAULT_VISIBLE}`);
     pass('file:// uses localStorage (browser-only badge)', /browser only/.test(fileBadge), fileBadge);
     await page2.close();
 

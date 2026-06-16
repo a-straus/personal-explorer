@@ -63,9 +63,10 @@ independent school"), add a key to the same `.env`:
 ANTHROPIC_API_KEY=sk-ant-your_key_here
 ```
 
-The enrichment uses **Claude Haiku** (`claude-haiku-4-5`, the cheapest model) to summarize, reading
-each opportunity's public page. **This is entirely optional** — with no key, the app still shows logos and the rich
-"why it fits" notes that are already in your data. (Logos never need a key.)
+The enrichment uses **Claude Haiku** (`claude-haiku-4-5`, the cheapest model) to write a short factual
+line per organization (resolved once per unique org and cached, so re-runs don't re-spend). **This is
+entirely optional** — with no key, the app still shows logos and the rich "why it fits" notes that are
+already in your data. (Logos never need a key.)
 
 **4. Refresh the data:**
 
