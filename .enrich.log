@@ -1,7 +1,0 @@
-Logos: 118 unique non-aggregator domains; 118 to fetch, 0 cached.
-.......x......x..x.xx....x....x.....x...................xx.........x...x.....x...x....xx................x......xx.x.x.
-Logos: 97/118 domains have a real logo (rest → monogram). New this run: 97.
-Text: 146 unique orgs; 146 to enrich via Claude (claude-haiku-4-5), 0 cached.
-  10/146  20/146  30/146  40/146  50/146  60/146  70/146  80/146  90/146  100/146  110/146  120/146  130/146  140/146  146/146
-Text: 146/146 orgs have an about/known-for line.
-Wrote enrichment.js — 185/185 items have enrichment (logo and/or text).

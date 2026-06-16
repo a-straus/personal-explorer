@@ -22,3 +22,7 @@ app.db-shm
 # OS
 .DS_Store
 Thumbs.db
+
+# Build logs
+.enrich.log
+.server.log
