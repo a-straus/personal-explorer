@@ -6,7 +6,6 @@
 
 # Node
 node_modules/
-package-lock.json
 
 # Local progress database (your application tracking) — never commit
 app.db
@@ -27,3 +26,6 @@ Thumbs.db
 .enrich.log
 .server.log
 .classify-cache.json
+
+# verify-ui.mjs screenshots
+ui-*.png
