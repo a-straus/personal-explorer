@@ -1,0 +1,2175 @@
+{
+  "byId": {
+    "rec070A42wfQr2bQ4": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rec09cROalEg1CrM5": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec0B5aDZl6EbtCHI": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec0PCKIFIq4WUtqm": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec0eNCXwnir3M6HB": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec0k68FS8ia4571V": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec0nCo2MMVLP6E5t": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec0tJoNHbUkeGZ5J": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec19Iuv4cImBryEq": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec1AL3hIGALOnwMJ": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec1CrfniFD5UuVcD": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec1Lvql7xVKtPgX0": {
+      "commute": "Long haul",
+      "effort": "15+ hrs/wk"
+    },
+    "rec1O9O20NUhMaDVi": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec1RugvnqHUZncYC": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec1b8gXH8GWoQTec": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec1v5bpvU7FazcHl": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec1yW2RKCqTVCWxF": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec226ehIKaxnHjjG": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec2IViCtgpIwvPv2": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec2aozirWBLDgFHa": {
+      "commute": "Long haul",
+      "effort": "15+ hrs/wk"
+    },
+    "rec2o7hwTGvCB4Em1": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "rec2yySUOkKxjv043": {
+      "commute": "Long haul",
+      "effort": "15+ hrs/wk"
+    },
+    "rec2z5JMy8GK15jFw": {
+      "effort": "2–5 hrs/wk"
+    },
+    "rec327JCo7SsniDYp": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec3JeslJkctO1blw": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec3M8xVqeKg3Vx05": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec3ObqpH59N5NIVY": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec3w6qvFWR3Jw74X": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec3wsvhK9EjvIoSj": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec3yqCAEQKe99f4e": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec49lL13aabQi0PL": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec4EQv0Q8O2YLfy1": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec4TIoGhYXvmwSbn": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "rec4VVdOK1xMPqrR6": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec4VzIq0H6ALX9C3": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec4aT5DACrs1wEho": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec4ildKLSQwuzipV": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec5NHCyLdhPqK8yN": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rec5TeBFOcsu1riNt": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec5oeRMhxKjo2fRf": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec6WQtwN0mZgNCM5": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec6Ypr6Z3XnewiGD": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec6tvrcQuMeyrgFG": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec77yUwyeb8Rfa7V": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec7FAXtm3iV3JsqA": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec7Jl4TQ9GZdxxEb": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec7WihvmLbD7T74O": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "rec7XTwvceysYJmpi": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec7joAQduUpYijYj": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec7wLw1hbbV10o37": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rec82iNAextBFMou6": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec8clCH1RvYYwi9h": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec8eYBkMJKPDdluH": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec8ojN613R1EgbDY": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "rec8uSiHCui5Egffr": {
+      "effort": "2–5 hrs/wk"
+    },
+    "rec8w2u66G5ojgF68": {
+      "effort": "Full-time"
+    },
+    "rec94pT07Ac5sC0eC": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rec99VWW7qaCeyH2R": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec9a5k9PxbXzWyN2": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recAFZkXwXBruWQHR": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recAHblivXgCKQ1Pg": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recAXyLOmLuNpnTTe": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recAcF5dVx7FxbXRM": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recAdMq70lCFpBWwT": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recB1zpZv6qLt0p95": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recBHuHZKuU17aYXN": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recBNIOm2rnThA7m4": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recBijxORcW23przl": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recBw0rftvVxrgTAX": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recCUsnLAEg4chHKS": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recCj87bfXawdKjcI": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recCmvNwog3BbsfD1": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recCvC4NCbeQlHyrm": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recCysZTBe1wS4Zq9": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recD0J3Itie7aACuL": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recDEHZqdMSlSFhlU": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recDJRWpyWxRf84XI": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recDMTbaElQe8aRMx": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recE0oDRdbJMvvQpx": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recEANoEnx8FkZxT2": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recECFOc5kE6q4TDD": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recELCEBlYiA9onP4": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recEq3rj3ZWPuV1hf": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recFOndDJgFIoqs6h": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recFRObR25oleXtrl": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recFb2SAqvUH7qdAa": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recFqr3A8KlXwSzIu": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recFynRQSRL0YQsHb": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recG54QPUAeBAACc0": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recG7r9Ad2CtJrtUT": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recGAW2CRIQJXV264": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recGKtCUCJYpJcpGB": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recGVafFpAD7CVeuG": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recGnHgRLAoumnkVL": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recGsHwyjCooNlEN3": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recHAnpBQR7E7lkGF": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recHHYByhZPF0xxyk": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recHNGHwQ0NeFDFw9": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recIaIHhiXUCAtE2f": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recIc75LlSx4W29SL": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recIn4AvV37YE0a7z": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recIzPJwCUBHbTIbn": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recJ6ba8ftS0mfIBM": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "recJADAMxXxptxcXA": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recJI76uSrCt2dSV8": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recJOnPimikleKIBe": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recJRfYP5wGc7jx46": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recJS3xV29Zx6uvEq": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recJaLugz4bFvhhWW": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recKJD0vYTMqfeofi": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recKf5VJJW9mMpmji": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recKiZBMhahScnqwS": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recKsSQmXjiSQKZwx": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recKu0EUJpN7EeFQs": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recKuGGaH1TYo35E3": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recL85JrBW1Hqdr9j": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recLMzGgru4z2KWN3": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recLf0Ndbb3uF0v3W": {
+      "effort": "Full-time"
+    },
+    "recLjmpmA2WMHOeVz": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recLsBPIVdIwdQd96": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recLsUDSD8RoNp9kF": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recLuM75lRQDUNTo0": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recMDNI5rX5U08FAO": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recMVSUKOqjdrTMwM": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recNKJyv9M2mzwV6d": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recNe1gvSaqTxkKia": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recNj8Mm9gx1EyNTP": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recNjs9rtyFHwDm1a": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recNsM2PQ4QvhdO9W": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recNvNeNFTZz4bu4K": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recO0wjDbQoVUIDrD": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recOHcDnm4cNqgZO1": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recOUgFMLmreVr1q7": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recOgxOa5rWp4kz71": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recP3RQj2krmuWVlt": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recP8qOlhKU3rGpGU": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recP9Y7EYWRQdw9k2": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recPF3n7UCchOhCpo": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recPFtR2inSJrCWAR": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recQ70KtGTy8hO9ja": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recQgOYS58PNpvQS8": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recR5mfyMWcA6tAeU": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recR82t0DviOk1BtO": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recRQpZsJha1iSSCd": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recRS8XM9fK9oYWJY": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recRjh8rfinFb08Ya": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recRnunYCf3f46oW6": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recSG5eROd6KWgqDY": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recSTEj5LW7ry7aLz": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recT85eVq0otvpIeb": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recTF8nIHul4VthS7": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recTUnOZMXu9IGoG3": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recTplProAgcoLrnh": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recTtYE45RlzkQvn3": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recUMI6lyd23AINF2": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recURgRRYJZ4Wb1VY": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recUgwzqTPvEs1FPW": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recUijJuDvUwtVk0K": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recUxCTkI7k2Ck2ZK": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recUyIhPZVoMbdcxI": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recV03RZo4vzRLiNA": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recV35ANVUqFmDkiJ": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recV6lyTwrXHUHiag": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recVGo0tX7e9CZ7c4": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recVXKRSLihOyb7Pe": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recVbDwf57PQaWHQR": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recVdhPe7vqiAZRW1": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recVkEDZ0UnMzKflj": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recVvjQQR33cMb3jb": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recWvZ8nb1pdlG8sf": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recXiAAYvsRP9uXqo": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recXm8hGkRvq2J2bw": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recXxlQVCfsPgjO6A": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recXyX1qhIhnctEXI": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recYJqGB6bWev5sKH": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recYlrw7FptHxDkZ7": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recYnVhX7NuJZHREy": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "recYtsqNXnH7eG7GI": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recYuZka2ynOA66qk": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recZF8cWxmqbyck1r": {
+      "commute": "Remote",
+      "effort": "15+ hrs/wk"
+    },
+    "recZd5V7i5ZSgtEFq": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recZgMjm7zJFD8GyD": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recZghDbNl15oEyL7": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recZk3byno4MJIwsp": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recZoFFumTHpHkLfp": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "reca0C6Hiu7tGLu1v": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recaVtk5Tk5bYeTQf": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recaWdl2ugsgNznV5": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recaejrgxIKhl7Ylr": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recamAhYccCKvsI1D": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recaocTlzyI04YEzE": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recax0UOYkP9yrsLD": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recb2bes1cQ2PVEDR": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recb7hS5pGQyR9Bkb": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recbEFWe2kvGFOnWt": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recbLOpMnV4x0XP4y": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recbUMtQ203NpjFYB": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recbjTwCupxI1QloC": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recc0T4WC22jLNqlT": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recc1MFb768tuXQem": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recc2dklZhf6CCcL1": {
+      "commute": "Remote",
+      "effort": "15+ hrs/wk"
+    },
+    "reccHB9QwpCYFFzd6": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "reccgNqMsCTypLukX": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "reccwbrJcsJQQgJAm": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recdMHHHygSUbA8e1": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recdX9ZL8mFbiAd7j": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recdlqaF4NBzQVdyI": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recdvJRIFAZct0azi": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rece1fTfL2amtjCb7": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recejCPzqi692XeOS": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recenPfP21pZtkHwr": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recenzVex3umT7a24": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recer212Q5wF9JnzO": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "recesKPkduaMnBZ7K": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recf9PScavvRwQYW9": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recfBWvReCGTewk19": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recfXDjYtg284QrMe": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recfnmiYPfBqkvx3L": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recft4CFSxRBz4TfE": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recfvpEAYZ0ZPuHnU": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recg18s1PNJGpHzFm": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recg5dmIGntCI3oC7": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recgD7Y89jHlYd8j0": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recgLyaVPLRrjWiFT": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recgR5WEOUKf0KZi9": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recgSnp48s5k9YWu4": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recgbGnkyGuCNSp7A": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recgw2UTrEltVtjiH": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rechJOqmHwaEjuD7Z": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rechS4x3613D7gFMi": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rechVCisFA6Lc5KfR": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rechcEYdwO9pGFAKK": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rechpWOIAyztfQ5te": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rechrmOVv5Fb0ABAX": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "reci2l2q47zVOy1Zo": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "reci5z7Uw1Hbj9iyG": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "reci6lF7D6MpcXpU6": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "reciG93IcEKb1GRjC": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recim2gInZh8Cyn6x": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recin0CO094S1qMa5": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recirVL3YfmHMfLu5": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recisKOThu1iJFmiT": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recitPZdGq4gxHWgl": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recjE3JPbhTZHFiUi": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recjLDJitaxD5ITGK": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recjd7WJBPjPppp5S": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recjm2XnoW1jeCMdf": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recjsvxg6EFexctrk": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "reck2gpV0BynHoF1x": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "reck7zxcTCPy4AVGO": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "reckFT9BPaJeXV1sQ": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "reckSNZ0IUyP66KmW": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "reckaLV1mtKU7TDTB": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "reckz2xIbs0Zasnpq": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recl72cweaaBVmyzY": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "reclBCnq13xbuNfdc": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "reclYzeDPuawFtZJQ": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "reclkcpxaUPItSffx": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "reclv9Jhp8sti0k30": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recmHopeAOpeACIA0": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recmLnAoxlS0TKz0M": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recmubzJWycRdEBuz": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recmxauoKfTkfkMcR": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recnUvTpqUNghFilG": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recnbpEge6eELn4d1": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recnzBR9U7s2jQ8FD": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recoBOcrrxnIDmZO9": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "recoD90THP6Voj05z": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recoj2SmROEfOmguj": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recpOXEb461XNgGOk": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recpTbd7S4jCib4ca": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recpjDz7pQynLOHK2": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "recpkGOB2uu7exjRv": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recplfx7cYSboOBZr": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recq4hgYqvnIn9uOO": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recqBw3B2haVGieF4": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recqP94PSyb6Q0553": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recqg7s95YebsDyjE": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recr6p7AK6gt0Nwsq": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recrjqtT7b9N9q9X6": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recrzDf2HPNTBEtPV": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recsOJ8IafiSpwI17": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recsaEIGtr0zevnLy": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recsaRGvp9VgKUT8d": {
+      "commute": "Too far",
+      "effort": "2–5 hrs/wk"
+    },
+    "rectbQKIAwh0DFk8W": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recusuyL124BYVOCJ": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recuucAczk6Z5kulG": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recv0K3OQ3IS6mUdE": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recvG51jfQL1vGMTa": {
+      "commute": "Short transit"
+    },
+    "recvbKWoBjNTyYDAd": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recvjhnvdZUIDK6KI": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recvnYs04N8hAmdoL": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recw2G6QHL6F1Sg1d": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recwPhxI28rfqBqUE": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recwTUWXqghx2uy4x": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recwWM5I3zlK2RC0V": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recwgLt5aU8RUT0SM": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recxWk6XrXE4PxMFs": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recxtPeXUU4rMoMlI": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recxtawztqchTQxJF": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recyKrpKsOepEpZlu": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recyL5IhQiailnWEO": {
+      "commute": "Long haul",
+      "effort": "2–5 hrs/wk"
+    },
+    "recyLaWmKQdqlPhHN": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recyYraWK7Vcfifzw": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recyen3mXTiPShQgW": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "recyio7eMoJkKjoWo": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recyn6oEmyJ8aJL19": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "recypFsi6IZCNemzn": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recyrwWeWTYQRKBGT": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recz8I5c7YFjyrEU3": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "reczuHsL0bJqCOc56": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec0eBImq2h0pex0m": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec0kVin2COIUETZl": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec17wE1xF5i21dBK": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec1dG4BEZwfqfkWQ": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec1yi1TJKG2QG1qe": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec2QjmOuK3eHBA5G": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec2ZAJ9drfmUL7Av": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec2eQ4qqrcVeyZ7w": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec3A6Uf23fv0tPF5": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec3Mqqn4VYkGteme": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec5ZHFFTlsPl8g0S": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec5oKdetyxQ23zMX": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec5vOqp9x9vxdUYN": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "rec6X2It7xftz6WUz": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec6kOhfwVRSyZfIU": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec7Svmm53ZbAOnw2": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec7YEpXjsIFdhrt7": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec85sdnNMConrdDy": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec8e9OkyMHzBRXnp": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec8hk9oET90vaTXl": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec8mt425lUoBmW8U": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec9Wizr4tzmSVq1O": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec9XkxDoTfrLGgzy": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec9hZwOLb7zExSbl": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rec9qHi6Q3E6TkPcK": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recABuDe5zO8FqY1u": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recADYmPQCT7eY7yA": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recAN6OlZCCqRl1ht": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recAeCslOEHWYiYOP": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recBJrgMwKPzpr5yg": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recBlo0WN02C3hKog": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recCJ94op12HIoH4j": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recCKNsijIOvXcnBn": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recCf7Le9LmycsLo1": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recCvUWGvnpSy8iYR": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recCzv3HIDTHSJh56": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recD0sd5zZavxa6KM": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recDHYSDsO8guUAuH": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recED9UZbvUmfr0MT": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recFIjeSdGQZgjlm8": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recFeZxeSLRjIlfcE": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recFk06bkpe3qAaXb": {
+      "commute": "Remote"
+    },
+    "recGAr3RtOj1JlGJx": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recJXR4xQZPBqR5UA": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recJdqrmV3JoXYNPt": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recJoBamdI4vaUYxG": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recJruIdHsXB4DZBJ": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recKCONIockYVAoAH": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recKGTlbVO3IWoTHT": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recKPcsUJh0Hx6E3n": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recKzTWYWREzUNqLM": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recLCfRYiVZemGaIz": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recLLapuMmRiYx2rr": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recNpTl9NJOTG0Epg": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recOXeT4XZv2Zlkly": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recOkVH6BuwmwkbF5": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recQ47LDyizr6FLmp": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recQaWRM9KAW1XBTl": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recR26VCHAmY71Ya8": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recRUxnwkewsml7Kj": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recSUMc6lwOtQurjB": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recTsp7CfqHCyMM29": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recUEkYCiY3LGNL2F": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recUyjrNb5P1tXMiT": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recVB3hHRASub3TD2": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recVLvLOadPh6A3hS": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recVZR83nPheWtlw7": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recVZiEgXoqJy4aZ0": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recVubrMXBGlOy9Cz": {
+      "commute": "Remote",
+      "effort": "Full-time"
+    },
+    "recWLt98D3p20oOrM": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recWXlCPprbaExOZj": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recWa2UIQOcvSMG8j": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recWddNYI2gTZCb09": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recWf5DrkxPibOQUy": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recWkBU4WAHF2o5ve": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recWsTmEfzGDVAvHh": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recX2oEABXaPLMpEx": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recXitV4WBOnKLMAm": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recY6rzyzRWmy6hmg": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recY8wDTVk9FShQDh": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recYDRoXx7vyTR098": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recYfQOkhIzj5NzWD": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recaDTayw8bL0jq6E": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recaIX4nQAPuLF1OT": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recb5lBLpUpaCAex1": {
+      "commute": "Too far",
+      "effort": "<2 hrs/wk"
+    },
+    "recb9LtrPP58sBl1H": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recbFu9AF0Pj2mcrx": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recbJt1vEVKJFVogl": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recbPSMdfSJ3UzptK": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recbgJJXnsW4uFUOj": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recczMYJxjMtrOQFL": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recds1eWM6fLP812M": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "rece6jYu7zLg5zZ1r": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "receUNfsL9Tq43pQi": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "rececOWatcmFmdapI": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recg0ySB5QRuJIdaT": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recgCQw5rQLOqlmSU": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recgDY95JC5oEO424": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recgaZDQ0sg2Zop1H": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rech5aL0MjJ3Bnogc": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rechS0FFL7eZAW8XY": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "reciWnJcPTsvOKBFq": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recjput8DMAsr461J": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recjrl1fUA424LhAy": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "reckZQcpzCjRoytV1": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "reckiuF98eHwPljHz": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recmGM2UeN7ZLp76X": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recmbtxSTkcavgLpp": {
+      "effort": "Full-time"
+    },
+    "recncuAoNJWliT0dD": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recne96lnVaXO9kOP": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recnjvysNu5XO7JLx": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recny5zp5GlX0Mqwz": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recoTyDqxwdlYaJO0": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recpTCvbpRg32LTPu": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recpit5gLioe1HT6L": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recpySk1hOEiX33Pi": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recqTaTQtwadOyVcj": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recr7WOBwuVHB6rq9": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recs7Gk5CHXmTKXw7": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recspVDndBqxjQoUO": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "rect07J13TSpUHe78": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recuEBT4Ozgm5cSFl": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recuNaKcRj4fwfKsZ": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recuZxfCdcpXrMocR": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recubj5fbD27ZGavy": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "recupuDh3my1hNI86": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recvB966u36Dl6uO0": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "recvO06hPPFpXcGxj": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recwIHig6BWVLbWPl": {
+      "commute": "Long haul",
+      "effort": "5–15 hrs/wk"
+    },
+    "recxhFLRJqtsmuvyw": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "recyPqnfXY7xSGFgE": {
+      "commute": "Too far",
+      "effort": "Full-time"
+    },
+    "reczNwdl3H88uGO49": {
+      "effort": "Full-time"
+    },
+    "reczPNSrcjluVV7gj": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "reczU4eTCjE1ngu6d": {
+      "commute": "Too far",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec0JPz51aAtRTEWc": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec0JUVobhF0to6jC": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec0RjM76gDEDR0ky": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec1KQXztietIxcIb": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec1s3RWtaVaWMnxi": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec3CoImhWyPeS0Rk": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec3cKRueNP08ccqC": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "rec3gD04WjN8oNB3y": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "rec3tbPNl6ApHfqeK": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec4CdvVp1k62qipV": {
+      "commute": "Short transit",
+      "effort": "5–15 hrs/wk"
+    },
+    "rec5dEGmtXXbc0xOA": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec5mFZW6zJPY43xq": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec620M7oHlbJgO3D": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec6AtgDsnwiw7DNQ": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec72BHbz370d2CYk": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "rec83oUPToN4J94wy": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "rec8FgUV5RcR3itqo": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec8QZZEliEcfUB2K": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rec9Cbdy3yonvBjNn": {
+      "commute": "Short transit",
+      "effort": "2–5 hrs/wk"
+    },
+    "rec9WwOycDzNRGUBG": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recAdlvjUuDMgP3U1": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recCH2BhU1bziKvO8": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recDmKJnx8SA8hWwb": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recDrEewWZX1pD0ZU": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recE6GpLpbGpfXleO": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recFNvEL1AfmS8SvW": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recFOjJtmSQo2RRfi": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recFQe310ESiFdO2u": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recFnidnm4hCZlJKs": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recFzx3v9vYIw9xzg": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recG3ld5T0W6Re4B6": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recGBHaIezc84uFH6": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recGZUI6arCKftfvl": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recHG2oP14vCvgQo1": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recHQDLjWsjWCqmrP": {
+      "commute": "Long haul",
+      "effort": "15+ hrs/wk"
+    },
+    "recHR5gRkhTCiAlJ0": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recIFOQ5iawQpQmM8": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recJ0PJ05ZFwiEZFI": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recJ5Cfz2SbNSkvz0": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recJQo22Id09SvRdZ": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recJp99SkrYrCVZ54": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recJwbN7JiTRFXZB2": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recLW1YEA2A3dWGGu": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recLxtlmPX07ndId5": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recMeAasQZ3SqswtF": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recMmLB2QycPXV2c7": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recNjPMNe9JehEVtr": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recPWVudgjCHCTk7j": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recQ4FOYmg4CY95jm": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recQSFBVEqcvR2tki": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recR8UtVmOPqkRUgS": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recRJVf6LSVeWBOiP": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recS2lwBj7AYRRXHT": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recT428wa6U7yCd6C": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recT7yJEgCGgbwkmw": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recTbcKdR2I1ipgH4": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recUJjWi8AUGoOrBx": {
+      "commute": "Short transit",
+      "effort": "Full-time"
+    },
+    "recVDesvzJrZSOfue": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recVhDV06mauhZvDv": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recVtAJNXlABepWti": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recX89LD1MSqB932d": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recYmrZ4Jlu0axNY0": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recYpo0SlbpmBOgvK": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recYvIirDNsLd5AoA": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recZ3U6wRs4Edei4n": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recZ4nhPtY9VFFjCY": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recZtKOBdrKtL23mj": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recaNNtcrAGvoudud": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recanOYp9vhSTpLHU": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recaolrusyaivN8sX": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recazHkAMs9ZIIS1b": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "reccsA40ZQFLNz5RI": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recdAu2KgFbWnEzUv": {
+      "commute": "Too far",
+      "effort": "<2 hrs/wk"
+    },
+    "recdr2GiYw2LyTzWD": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rececaGpEK80YNpwO": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recef65t5Gldqbnfk": {
+      "commute": "Too far",
+      "effort": "<2 hrs/wk"
+    },
+    "recgGkCDVYA0AQ4iG": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rech2BKjfbQqiT44k": {
+      "commute": "Long haul",
+      "effort": "15+ hrs/wk"
+    },
+    "rechIuJPN3qHw5SMR": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "rechv9VZJUTh0xm0q": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "reciFaS7Sj47sMCkE": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "reciZ2W6xhEZwpiim": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recjtFRwaqQAbYHmc": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recktsFZumxb2zuhu": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "reckxEyDYz6RReInv": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "recl5WYVu7b2ju9xy": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recljDdOSJmbk4Ws3": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recltZVeKdh2Cm3UN": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recnJHu448LsJ0fOp": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recnPNBcuA8QTuAfI": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recnuBnWhzhW3GaGH": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recoejrkocDh0eZTQ": {
+      "commute": "Remote",
+      "effort": "5–15 hrs/wk"
+    },
+    "recpb9nOWxJfu8Iee": {
+      "commute": "Long haul",
+      "effort": "Full-time"
+    },
+    "recrkR2RUEkzTRCq0": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    },
+    "recwqK84XBXiRt2z6": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recx1WwD0cgopcjsH": {
+      "commute": "Long haul",
+      "effort": "<2 hrs/wk"
+    },
+    "recxZp3BKMKjbhLCP": {
+      "commute": "Short transit",
+      "effort": "<2 hrs/wk"
+    },
+    "recyxbN54U6rH3ISA": {
+      "commute": "Remote",
+      "effort": "2–5 hrs/wk"
+    },
+    "reczv9DFs6r2b7PMR": {
+      "commute": "Remote",
+      "effort": "<2 hrs/wk"
+    }
+  },
+  "homeBase": "Greenpoint, Brooklyn 11222 — at the Greenpoint Ave G station",
+  "model": "claude-opus-4-8",
+  "generatedAt": "2026-07-07T15:10:49.933Z"
+}
