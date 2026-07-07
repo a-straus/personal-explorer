@@ -35,6 +35,74 @@
   .counts b{color:var(--ink)}
   .counts .sep{color:var(--ink3)}
 
+  /* ---- collapsible header (manual toggle + auto-collapse on scroll) ---- */
+  .tabsrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .tabsrow .tabs{flex:1 1 auto;min-width:0}
+  .bartoggle{align-self:center;appearance:none;background:var(--panel);border:1px solid var(--line);
+    color:var(--ink2);border-radius:8px;padding:6px 11px;cursor:pointer;font-size:12.5px;font-weight:600;
+    display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+  .bartoggle:hover{color:var(--ink);border-color:var(--ink3)}
+  .bartoggle .ic{opacity:.7;flex:0 0 auto}
+  .bartoggle .chev{font-size:10px;transition:transform .2s ease}
+  header.app.collapsed .bartoggle .chev{transform:rotate(180deg)}
+  @media (max-width:560px){ .bartoggle .lbl{display:none} .bartoggle{padding:6px 9px} }
+  header.app .counts,header.app .bar,header.app .resultline{
+    transition:max-height .28s ease,opacity .2s ease,margin .28s ease,padding .28s ease;
+    max-height:280px;overflow:hidden}
+  header.app.collapsed .counts,header.app.collapsed .bar,header.app.collapsed .resultline{
+    max-height:0;opacity:0;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;pointer-events:none}
+  header.app.collapsed .panel{display:none}
+  @media (prefers-reduced-motion:reduce){
+    header.app .counts,header.app .bar,header.app .resultline,.bartoggle .chev{transition:none}
+  }
+
+  /* ---- dataset bar (Airtable definitions) + layout toggle — always visible ---- */
+  .subrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0 2px}
+  .datasetbar{display:inline-flex;gap:3px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:3px}
+  .dsbtn{appearance:none;border:0;background:none;color:var(--ink2);padding:6px 13px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .dsbtn:hover{color:var(--ink)}
+  .dsbtn[aria-pressed="true"]{background:var(--accent);color:#04122e}
+  .dsbtn .ct{opacity:.62;font-size:11.5px;font-weight:700}
+  .dsbtn[aria-pressed="true"] .ct{opacity:.85}
+  .subrow .spacer{flex:1 1 auto}
+  .layouttoggle{display:inline-flex;gap:3px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:3px}
+  .layouttoggle button{appearance:none;border:0;background:none;color:var(--ink2);padding:6px 12px;border-radius:8px;cursor:pointer;font-size:12.5px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+  .layouttoggle button[aria-pressed="true"]{background:var(--accent2);color:#fff}
+  .layouttoggle button:hover{color:var(--ink)}
+
+  /* ---- hide / restore control ---- */
+  .hidebtn{flex:0 0 auto;border:0;background:none;cursor:pointer;font-size:15px;line-height:1;color:var(--ink3);padding:3px 5px;border-radius:6px}
+  .hidebtn:hover{color:var(--bad);background:var(--panel2)}
+  .card.ishidden,.focuscard.ishidden{opacity:.6;filter:grayscale(.4)}
+  .restorebtn{border:1px solid var(--warn);background:rgba(251,191,36,.14);color:var(--warn);border-radius:9px;padding:7px 11px;cursor:pointer;font-size:12.5px;font-weight:650}
+  .restorebtn:hover{background:rgba(251,191,36,.24)}
+
+  /* ---- focus (single-item) view ---- */
+  .focuswrap{max-width:760px;margin:0 auto}
+  .focusnav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+  .navbtn{appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:10px 18px;cursor:pointer;font-size:14px;font-weight:650;display:inline-flex;align-items:center;gap:8px}
+  .navbtn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+  .navbtn:disabled{opacity:.38;cursor:default}
+  .focuscount{color:var(--ink2);font-size:13.5px;font-weight:600;white-space:nowrap}
+  .focuscount b{color:var(--ink);font-size:15px}
+  .focuscard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--pl,var(--line));border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:14px}
+  .focuscard.starred{box-shadow:0 0 0 1px var(--star),var(--shadow)}
+  .focuscard .ctitle h3{font-size:20px}
+  .focuscard .fnotes{font-size:14px;color:var(--ink);line-height:1.6;white-space:pre-wrap}
+  .focushint{text-align:center;color:var(--ink3);font-size:12px;margin-top:14px}
+
+  /* ---- user notes (drawer) ---- */
+  .notesarea{width:100%;min-height:92px;padding:10px 11px;border-radius:9px;border:1px solid var(--line);background:var(--panel);color:var(--ink);resize:vertical;line-height:1.5;font-family:inherit}
+  .notesarea:focus{outline:none;border-color:var(--accent)}
+  .savehint{color:var(--ink3);font-size:11.5px;margin-top:5px;min-height:14px}
+  .danger{border:1px solid var(--bad);background:rgba(248,113,113,.12);color:var(--bad);border-radius:9px;padding:8px 12px;cursor:pointer;font-weight:650;font-size:13px}
+  .danger:hover{background:rgba(248,113,113,.2)}
+
+  /* ---- undo toast ---- */
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--panel);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:11px;padding:11px 15px;display:flex;align-items:center;gap:16px;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;font-size:13.5px}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+  .toast button{border:0;background:none;color:var(--accent);font-weight:700;cursor:pointer;font-size:13.5px}
+
   /* ---- tabs ---- */
   .tabs{display:flex;gap:4px;margin:12px 0 6px;border-bottom:1px solid var(--line)}
   .tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;color:var(--ink2);padding:9px 14px;cursor:pointer;font-weight:600;font-size:14.5px;border-radius:8px 8px 0 0}
@@ -55,7 +123,7 @@
   .filtbtn .n{background:var(--accent);color:#04122e;border-radius:999px;padding:0 7px;font-size:11.5px;font-weight:800;margin-left:2px}
 
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px;display:none}
-  .panel.open{display:block}
+  .panel.is-open{display:block}
   .fgroup{margin:4px 0 12px}
   .fgroup:last-child{margin-bottom:2px}
   .fgroup h4{margin:0 0 7px;font-size:11.5px;text-transform:uppercase;letter-spacing:.6px;color:var(--ink3)}
@@ -130,9 +198,9 @@
 
   /* ---- drawer ---- */
   .scrim{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;display:none}
-  .scrim.open{display:block}
-  .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--bg);border-left:1px solid var(--line);z-index:51;transform:translateX(100%);transition:transform .22s ease;overflow-y:auto;box-shadow:-12px 0 40px rgba(0,0,0,.4)}
-  .drawer.open{transform:translateX(0)}
+  .scrim.is-open{display:block}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:min(460px,100%);background:var(--bg);color:var(--ink);text-align:left;border-left:1px solid var(--line);z-index:51;transform:translateX(100%);transition:transform .22s ease;overflow-y:auto;box-shadow:-12px 0 40px rgba(0,0,0,.4)}
+  .drawer.is-open{transform:translateX(0)}
   .dwrap{padding:18px 18px 60px}
   .dclose{position:sticky;top:0;float:right;border:1px solid var(--line);background:var(--panel);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:17px}
   .dhead{display:flex;gap:12px;align-items:flex-start;margin-bottom:6px}
@@ -145,6 +213,7 @@
   .rate{display:flex;gap:4px}
   .rate button{border:1px solid var(--line);background:var(--panel);border-radius:7px;width:30px;height:30px;cursor:pointer;font-size:14px}
   .rate button.on{background:var(--star);border-color:var(--star);color:#3a2c00}
+  #d-star.star-on{background:rgba(245,197,24,.16);border-color:var(--star);color:var(--star);font-weight:700}
   .chk{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:13.5px}
   .chk input{accent-color:var(--ok);width:16px;height:16px}
   .logadd{display:flex;gap:8px;margin-bottom:10px}
@@ -152,6 +221,25 @@
   .logadd button{background:var(--accent);color:#04122e;border:0;border-radius:8px;padding:0 14px;font-weight:700;cursor:pointer}
   .logitem{border-left:2px solid var(--line);padding:3px 0 8px 11px;margin-left:3px;font-size:13px}
   .logitem time{display:block;color:var(--ink3);font-size:11px;margin-bottom:2px}
+
+  /* ---- facets (commute / time commitment) + user tags ---- */
+  .pill.facet{background:var(--panel2);color:var(--ink2)}
+  .pill.facet.auto{border-style:dashed}
+  .pill.tag{background:rgba(139,92,246,.14);color:var(--accent2);border-color:rgba(139,92,246,.4)}
+  .card.toofar,.focuscard.toofar{opacity:.68;filter:saturate(.75)}
+  .tagchip button{border:0;background:none;color:inherit;cursor:pointer;font-size:13px;padding:0 0 0 3px;line-height:1}
+  .facethint{color:var(--ink3);font-size:11.5px;margin-top:7px}
+
+  /* ---- "more like this" ---- */
+  .simitem{display:flex;gap:10px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:9px;margin-bottom:6px;cursor:pointer;font-size:13px;background:var(--panel)}
+  .simitem:hover{border-color:var(--accent)}
+  .simitem .ti{flex:1;min-width:0}
+  .simitem b{font-weight:640;display:block;line-height:1.3}
+  .simitem .o{color:var(--ink2);font-size:11.5px}
+  .simitem .s{color:var(--ink3);font-size:10.5px;flex:0 0 auto;font-variant-numeric:tabular-nums}
+
+  /* ---- semantic search indicator ---- */
+  .semtag{color:var(--accent2);font-weight:650;white-space:nowrap}
 
   .empty{text-align:center;color:var(--ink3);padding:60px 20px}
   .empty .big{font-size:40px;margin-bottom:8px}
@@ -172,23 +260,39 @@
       <a class="badge" id="airtableLink" target="_blank" rel="noopener" style="text-decoration:none">Airtable ↗</a>
     </div>
     <div class="counts" id="counts"></div>
-    <div class="tabs" role="tablist">
-      <button class="tab" role="tab" data-view="browse" aria-selected="true">Browse</button>
-      <button class="tab" role="tab" data-view="deadlines">Deadlines</button>
-      <button class="tab" role="tab" data-view="board">Board</button>
+    <div class="tabsrow">
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" data-view="browse" aria-selected="true">Browse</button>
+        <button class="tab" role="tab" data-view="deadlines">Deadlines</button>
+        <button class="tab" role="tab" data-view="board">Board</button>
+      </div>
+      <button class="bartoggle" id="barToggle" type="button" aria-expanded="true" aria-controls="filterbar" title="Collapse search &amp; filters">
+        <svg class="ic" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <span class="lbl">Search &amp; filters</span><span class="chev" aria-hidden="true">▾</span></button>
     </div>
-    <div class="bar">
+    <div class="subrow">
+      <div class="datasetbar" id="datasetBar" role="group" aria-label="Filter by Airtable definition"></div>
+      <span class="spacer"></span>
+      <div class="layouttoggle" id="layoutToggle" role="group" aria-label="Browse layout">
+        <button data-layout="grid" aria-pressed="true" title="Grid — many cards">▦ Grid</button>
+        <button data-layout="focus" aria-pressed="false" title="Focus — one at a time">▭ Focus</button>
+      </div>
+    </div>
+    <div class="bar" id="filterbar">
       <label class="search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-        <input id="search" type="search" placeholder="Search title, org, notes, location…" aria-label="Search">
+        <input id="search" type="search" placeholder="Search anything — try &quot;paid weekend robotics tutoring&quot;" aria-label="Search">
         <button class="clr" id="clrSearch" title="Clear" hidden>×</button>
       </label>
       <button class="ctrl filtbtn" id="filtBtn">Filters <span class="n" id="filtN" hidden>0</span></button>
+      <label class="ctrl toggle"><input type="checkbox" id="hidePast" checked> Hide past due</label>
       <label class="ctrl toggle"><input type="checkbox" id="hideTerminal" checked> Hide Passed/Rejected</label>
       <label class="ctrl toggle"><input type="checkbox" id="needsTriage"> Needs triage</label>
+      <label class="ctrl toggle"><input type="checkbox" id="showHidden"> Show hidden</label>
       <span class="ctrl"><label for="sort" style="color:var(--ink3)">Sort</label>
         <select id="sort">
           <option value="priority">Priority</option>
+          <option value="status">Status (pipeline)</option>
           <option value="deadline">Deadline (soonest)</option>
           <option value="added">Date added (newest)</option>
           <option value="org">Org (A–Z)</option>
@@ -207,25 +311,31 @@
 
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-hidden="true"></aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="data.js"></script>
 <script src="enrichment.js"></script>
+<script src="facets.js"></script>
 <script>
 "use strict";
 (function(){
   const DATA = window.TEACHING_DATA || {items:[],counts:{},generatedAt:''};
   const ENRICH = (window.TEACHING_ENRICHMENT||{}).byId || {};
+  const FACETS = (window.TEACHING_FACETS||{}).byId || {};
   const ITEMS = DATA.items.map(it => Object.assign({}, it, ENRICH[it.id]||{}));
   const byId = Object.fromEntries(ITEMS.map(i=>[i.id,i]));
+  const COMMUTE_VALS=['Walkable','Short transit','Long haul','Too far','Remote'];
+  const EFFORT_VALS=['<2 hrs/wk','2–5 hrs/wk','5–15 hrs/wk','15+ hrs/wk','Full-time'];
 
   /* ---------------- storage adapter (SQLite-or-localStorage) ---------------- */
   const LS_KEY = 'oppExplorerProgress';
   const Store = {
-    backend:'local', progress:{},
+    backend:'local', progress:{}, semantic:false,
     async init(){
       try{
         const r = await fetch('/api/health',{signal:AbortSignal.timeout(600)});
         if(r.ok){ this.backend='sqlite';
+          this.semantic = !!(await r.json().catch(()=>({}))).semantic;
           const rows = await (await fetch('/api/progress')).json();
           for(const p of rows) this.progress[p.id]=p;
           return;
@@ -235,7 +345,7 @@
       try{ this.progress = JSON.parse(localStorage.getItem(LS_KEY)||'{}'); }catch(e){ this.progress={}; }
     },
     get(id){
-      return this.progress[id] || {id,status:'',starred:false,rating:0,appliedOn:'',followUpOn:'',checklist:{},log:[]};
+      return this.progress[id] || {id,status:'',starred:false,rating:0,appliedOn:'',followUpOn:'',checklist:{},note:'',hidden:false,tags:[],facetCommute:'',facetEffort:'',log:[]};
     },
     _persistLocal(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(this.progress)); }catch(e){} },
     async save(id, patch){
@@ -268,11 +378,11 @@
     exportCsv(){
       if(this.backend==='sqlite'){ window.open('/api/export.csv'); return; }
       const esc=v=>'"'+String(v??'').replace(/"/g,'""')+'"';
-      const head=['item_id','status','starred','rating','applied_on','follow_up_on','checklist','updated_at','activity_log'];
+      const head=['item_id','status','starred','rating','applied_on','follow_up_on','checklist','note','hidden','updated_at','activity_log'];
       const lines=[head.join(',')];
       for(const p of Object.values(this.progress)){
         const logs=(p.log||[]).map(l=>l.ts+': '+l.text).join(' | ');
-        lines.push([p.id,p.status,p.starred,p.rating,p.appliedOn,p.followUpOn,JSON.stringify(p.checklist||{}),p.updatedAt||'',logs].map(esc).join(','));
+        lines.push([p.id,p.status,p.starred,p.rating,p.appliedOn,p.followUpOn,JSON.stringify(p.checklist||{}),p.note||'',p.hidden?1:0,p.updatedAt||'',logs].map(esc).join(','));
       }
       dl('opportunity-progress.csv', lines.join('\n'),'text/csv');
     }
@@ -283,7 +393,7 @@
   }
 
   /* ---------------- helpers ---------------- */
-  const DATASET_LABEL={opportunities:'Opportunities',programs:'Programs',events:'Events'};
+  const DATASET_LABEL={opportunities:'Opportunities',programs:'Programs',events:'Network & Events'};
   const PIPELINE=['New','Reviewing','Applied','Interview','Offer','Accepted','Rejected','Passed'];
   const TERMINAL=['Passed','Rejected'];
   const STATUS_OPTS=PIPELINE;
@@ -301,6 +411,19 @@
   function effStatus(it){ return Store.get(it.id).status || it.status || 'New'; }
   function isStarred(it){ return !!Store.get(it.id).starred; }
 
+  /* ---- facets: manual override (progress store) wins over auto (facets.js) ---- */
+  function facetOf(it){
+    const p=Store.get(it.id), a=FACETS[it.id]||{};
+    return { commute:p.facetCommute||a.commute||'', effort:p.facetEffort||a.effort||'',
+             commuteAuto:!p.facetCommute, effortAuto:!p.facetEffort };
+  }
+  function tagsOf(it){ return Store.get(it.id).tags||[]; }
+  function allTags(){
+    const s=new Set();
+    for(const p of Object.values(Store.progress)) (p.tags||[]).forEach(t=>s.add(t));
+    return [...s].sort((a,b)=>a.localeCompare(b));
+  }
+
   const NOW = new Date();
   function parseDate(s){ if(!s) return null; const d=new Date(s+'T00:00:00'); return isNaN(d)?null:d; }
   function dayDiff(d){ return Math.round((d - new Date(NOW.getFullYear(),NOW.getMonth(),NOW.getDate()))/86400000); }
@@ -316,6 +439,9 @@
     else { label = `${verbF} in ${days}d`; cls = days<14?'amber':'neutral'; }
     return {has:true,days,date:d,label,cls};
   }
+  // "Past due": an item whose deadline has passed (or an event that already happened).
+  // Items with no date are never past. Powers the default "Hide past due" filter.
+  function isPast(it){ const di=deadlineInfo(it); return di.has && di.days<0; }
   function fmtDate(d){ return d?d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):''; }
   function esc(s){ return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
@@ -339,31 +465,70 @@
   window.__mono=(id)=>monogram(byId[id],46);
 
   /* ---------------- state ---------------- */
-  const state={ view:'browse', search:'', sort:'priority', hideTerminal:true, needsTriage:false,
-    filters:{dataset:new Set(),category:new Set(),priority:new Set(),commitment:new Set(),status:new Set()} };
+  const state={ view:'browse', layout:'grid', focusIndex:0, search:'', sort:'priority',
+    hideTerminal:true, hidePast:true, needsTriage:false, showHidden:false,
+    filters:{dataset:new Set(),category:new Set(),priority:new Set(),commitment:new Set(),status:new Set(),commute:new Set(),effort:new Set(),tags:new Set()} };
+
+  /* ---- semantic search: keyword matches are instant; vector results from
+     /api/semantic merge in on a short debounce (local server only) ---- */
+  const SEM={ q:'', scores:new Map() };
+  const SEM_MIN=0.45;           // cosine floor — below this bge-small matches are noise
+  const KW_BOOST=0.25;          // relevance bonus for literal keyword hits
+  let semTimer=null;
+  function semActive(){ return SEM.q && SEM.q===state.search && SEM.scores.size>0; }
+  function scheduleSemantic(){
+    clearTimeout(semTimer);
+    const q=state.search;
+    if(!Store.semantic || !q || q.length<3){ SEM.q=''; SEM.scores.clear(); return; }
+    semTimer=setTimeout(async()=>{
+      try{
+        const r=await fetch('/api/semantic?q='+encodeURIComponent(q));
+        if(!r.ok) return;
+        const j=await r.json();
+        if(state.search!==q) return; // user kept typing — stale result
+        SEM.q=q;
+        SEM.scores=new Map((j.results||[]).filter(x=>x.score>=SEM_MIN).map(x=>[x.id,x.score]));
+        render();
+      }catch(e){}
+    },350);
+  }
+  function keywordHay(it){
+    const p=Store.get(it.id);
+    return [it.title,it.org,it.notes,it.about,it.knownFor,it.location,it.source,it.category,
+            p.note,(p.tags||[]).join(' ')].join(' ').toLowerCase();
+  }
 
   function activeFilterCount(){ let n=0; for(const k in state.filters) n+=state.filters[k].size; return n; }
 
-  function matches(it){
+  function matches(it, ignoreTracking){
     const f=state.filters;
+    // hidden items are removed from every view (board included) unless "Show hidden" is on
+    if(Store.get(it.id).hidden && !state.showHidden) return false;
     if(f.dataset.size && !f.dataset.has(it.dataset)) return false;
     if(f.category.size && !f.category.has(it.category)) return false;
     if(f.priority.size && !f.priority.has(it.priority)) return false;
     if(f.commitment.size && !f.commitment.has(it.commitment)) return false;
     if(f.status.size && !f.status.has(effStatus(it))) return false;
-    if(state.hideTerminal && TERMINAL.includes(effStatus(it))) return false;
-    if(state.needsTriage && effStatus(it)!=='New') return false;
+    if(f.commute.size && !f.commute.has(facetOf(it).commute)) return false;
+    if(f.effort.size && !f.effort.has(facetOf(it).effort)) return false;
+    if(f.tags.size && !tagsOf(it).some(t=>f.tags.has(t))) return false;
+    if(!ignoreTracking && state.hideTerminal && TERMINAL.includes(effStatus(it))) return false;
+    if(!ignoreTracking && state.hidePast && isPast(it)) return false; // hide past-due items from discovery (kept on your board)
+    if(!ignoreTracking && state.needsTriage && effStatus(it)!=='New') return false;
     if(state.search){
-      const q=state.search.toLowerCase();
-      const hay=[it.title,it.org,it.notes,it.about,it.knownFor,it.location,it.source,it.category].join(' ').toLowerCase();
-      if(!hay.includes(q)) return false;
+      const kw=keywordHay(it).includes(state.search.toLowerCase());
+      const sem=semActive() && SEM.scores.has(it.id);
+      if(!kw && !sem) return false;
     }
     return true;
   }
   function sortItems(arr){
     const s=state.sort;
+    // rank by the same pipeline stage the Board/status-select show; non-pipeline raw statuses read as 'New' (index 0)
+    const statusRank=it=>{ const i=PIPELINE.indexOf(effStatus(it)); return i<0?0:i; };
     const cmp={
       priority:(a,b)=>prioRank(a.priority)-prioRank(b.priority) || a.org.localeCompare(b.org),
+      status:(a,b)=>statusRank(a)-statusRank(b) || prioRank(a.priority)-prioRank(b.priority) || a.org.localeCompare(b.org),
       deadline:(a,b)=>{const da=parseDate(a.deadline),db=parseDate(b.deadline);
         if(da&&db) return da-db; if(da)return -1; if(db)return 1; return prioRank(a.priority)-prioRank(b.priority);},
       added:(a,b)=>String(b.dateAdded||b.createdTime||'').localeCompare(String(a.dateAdded||a.createdTime||'')),
@@ -371,7 +536,16 @@
     }[s];
     return arr.slice().sort((a,b)=> (isStarred(b)-isStarred(a)) || cmp(a,b) );
   }
-  function visibleItems(){ return sortItems(ITEMS.filter(matches)); }
+  function visibleItems(){ // note: NOT ITEMS.filter(matches) — filter passes the index as arg 2, which would collide with matches' ignoreTracking param
+    const arr=ITEMS.filter(it=>matches(it));
+    if(state.search && semActive()){
+      // relevance order while a semantic search is live: vector score + keyword bonus
+      const q=state.search.toLowerCase();
+      const rank=new Map(arr.map(it=>[it.id,(SEM.scores.get(it.id)||0)+(keywordHay(it).includes(q)?KW_BOOST:0)]));
+      return arr.sort((a,b)=>rank.get(b.id)-rank.get(a.id));
+    }
+    return sortItems(arr);
+  }
 
   /* ---------------- header counts ---------------- */
   function renderHeader(){
@@ -382,20 +556,26 @@
     const due30=ITEMS.filter(i=>{const d=deadlineInfo(i);return d.has&&d.days>=0&&d.days<=30;}).length;
     const starred=ITEMS.filter(isStarred).length;
     const applied=ITEMS.filter(i=>['Applied','Interview','Offer','Accepted'].includes(effStatus(i))).length;
+    const hidden=ITEMS.filter(i=>Store.get(i.id).hidden).length;
     document.getElementById('counts').innerHTML =
       `<span><b>${c.opportunities||0}</b> opportunities</span><span class="sep">·</span>`+
       `<span><b>${c.programs||0}</b> programs</span><span class="sep">·</span>`+
-      `<span><b>${c.events||0}</b> events</span><span class="sep">—</span>`+
+      `<span><b>${c.events||0}</b> network & events</span><span class="sep">—</span>`+
       `<span><b>${top}</b> top picks</span><span class="sep">·</span>`+
       `<span><b>${due30}</b> due in 30d</span><span class="sep">·</span>`+
       `<span><b id="hc-star">${starred}</b> starred</span><span class="sep">·</span>`+
-      `<span><b id="hc-app">${applied}</b> in progress</span>`;
+      `<span><b id="hc-app">${applied}</b> in progress</span>`+
+      `<span class="sep" id="hc-hidden-sep"${hidden?'':' hidden'}>·</span>`+
+      `<span id="hc-hidden-wrap"${hidden?'':' hidden'}><b id="hc-hidden">${hidden}</b> hidden</span>`;
   }
   function refreshHeaderCounts(){
     const starred=ITEMS.filter(isStarred).length;
     const applied=ITEMS.filter(i=>['Applied','Interview','Offer','Accepted'].includes(effStatus(i))).length;
-    const s=document.getElementById('hc-star'), a=document.getElementById('hc-app');
-    if(s)s.textContent=starred; if(a)a.textContent=applied;
+    const hidden=ITEMS.filter(i=>Store.get(i.id).hidden).length;
+    const s=document.getElementById('hc-star'), a=document.getElementById('hc-app'), h=document.getElementById('hc-hidden');
+    if(s)s.textContent=starred; if(a)a.textContent=applied; if(h)h.textContent=hidden;
+    const hw=document.getElementById('hc-hidden-wrap'), hs=document.getElementById('hc-hidden-sep');
+    if(hw)hw.hidden=hidden===0; if(hs)hs.hidden=hidden===0;
   }
 
   /* ---------------- filter panel ---------------- */
@@ -406,11 +586,14 @@
       {key:'priority',title:'Priority',vals:presentPrios},
       {key:'category',title:'Category / Type',vals:[...new Set(ITEMS.map(i=>i.category).filter(Boolean))].sort()},
       {key:'commitment',title:'Commitment',vals:[...new Set(ITEMS.map(i=>i.commitment).filter(Boolean))].sort()},
+      {key:'commute',title:'Commute',vals:COMMUTE_VALS.filter(v=>ITEMS.some(i=>facetOf(i).commute===v)),match:(i,v)=>facetOf(i).commute===v},
+      {key:'effort',title:'Time commitment',vals:EFFORT_VALS.filter(v=>ITEMS.some(i=>facetOf(i).effort===v)),match:(i,v)=>facetOf(i).effort===v},
+      {key:'tags',title:'My tags',vals:allTags(),label:v=>'#'+v,match:(i,v)=>tagsOf(i).includes(v)},
       {key:'status',title:'Status',vals:PIPELINE.filter(s=>ITEMS.some(i=>effStatus(i)===s))},
     ];
     panel.innerHTML = groups.filter(g=>g.vals.length).map(g=>{
       const chips=g.vals.map(v=>{
-        const n=ITEMS.filter(i=> g.key==='status'?effStatus(i)===v:i[g.key]===v).length;
+        const n=ITEMS.filter(i=> g.match?g.match(i,v) : g.key==='status'?effStatus(i)===v:i[g.key]===v).length;
         const sel=state.filters[g.key].has(v);
         const dot=g.key==='priority'?`<span style="width:8px;height:8px;border-radius:50%;background:${prioColor(v)}"></span>`:'';
         return `<button class="chip" role="button" aria-pressed="${sel}" data-fkey="${g.key}" data-fval="${esc(v)}">${dot}${esc(g.label?g.label(v):v)} <span class="ct">${n}</span></button>`;
@@ -421,8 +604,24 @@
       const k=ch.dataset.fkey, v=ch.dataset.fval, set=state.filters[k];
       if(set.has(v))set.delete(v); else set.add(v);
       ch.setAttribute('aria-pressed', set.has(v));
+      if(k==='dataset'){ state.focusIndex=0; renderDatasetBar(); }
       updateFilterBadge(); render();
     }));
+  }
+  /* dataset bar — the "Airtable definition" quick filter, mirrors state.filters.dataset */
+  function renderDatasetBar(){
+    const bar=document.getElementById('datasetBar');
+    const none=state.filters.dataset.size===0;
+    let html=`<button class="dsbtn" data-ds="__all" aria-pressed="${none}">All <span class="ct">${ITEMS.length}</span></button>`;
+    html+=['opportunities','programs','events'].map(v=>{
+      const n=ITEMS.filter(i=>i.dataset===v).length;
+      const sel=state.filters.dataset.has(v);
+      return `<button class="dsbtn" data-ds="${v}" aria-pressed="${sel}">${esc(DATASET_LABEL[v])} <span class="ct">${n}</span></button>`;
+    }).join('');
+    bar.innerHTML=html;
+  }
+  function syncLayoutToggle(){
+    document.querySelectorAll('#layoutToggle button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.layout===state.layout)));
   }
   function updateFilterBadge(){
     const n=activeFilterCount(); const b=document.getElementById('filtN');
@@ -431,22 +630,31 @@
   }
 
   /* ---------------- BROWSE ---------------- */
+  function facetPills(it){
+    const fc=facetOf(it);
+    return (fc.commute?`<span class="pill facet${fc.commuteAuto?' auto':''}" title="Commute from Greenpoint${fc.commuteAuto?' (auto-classified — tap Track to override)':''}">📍 ${esc(fc.commute)}</span>`:'')
+      + (fc.effort?`<span class="pill facet${fc.effortAuto?' auto':''}" title="Time commitment${fc.effortAuto?' (auto-classified — tap Track to override)':''}">⏳ ${esc(fc.effort)}</span>`:'')
+      + tagsOf(it).map(t=>`<span class="pill tag">#${esc(t)}</span>`).join('');
+  }
   function cardHtml(it){
     const p=Store.get(it.id); const di=deadlineInfo(it);
-    const prio=it.priority||'';
+    const prio=it.priority||''; const hidden=!!p.hidden;
     const meta=[]; if(it.commitment)meta.push(['Commitment',it.commitment]);
     if(it.location)meta.push(['Location',it.location]); if(it.pay)meta.push(['Pay/Cost',it.pay]);
     const aboutBlock = (it.about||it.knownFor) ? `<div class="about">${esc(it.about||'')}${it.knownFor?`<span class="kf">Known for: ${esc(it.knownFor)}</span>`:''}</div>`:'';
     const statusOpts=STATUS_OPTS.map(s=>`<option ${effStatus(it)===s?'selected':''}>${s}</option>`).join('');
-    return `<article class="card${isStarred(it)?' starred':''}" style="--pl:${prioColor(prio)}" data-id="${esc(it.id)}">
+    return `<article class="card${isStarred(it)?' starred':''}${hidden?' ishidden':''}${facetOf(it).commute==='Too far'?' toofar':''}" style="--pl:${prioColor(prio)}" data-id="${esc(it.id)}">
       <div class="chead">
         ${logoHtml(it,46)}
         <div class="ctitle"><h3>${esc(it.title)}</h3><div class="org">${esc(it.org)}</div></div>
         <button class="star${isStarred(it)?' on':''}" data-star aria-label="Star" title="Star">${isStarred(it)?'★':'☆'}</button>
+        <button class="hidebtn" data-${hidden?'restore':'hide'} aria-label="${hidden?'Restore':'Hide'}" title="${hidden?'Restore to views':'Hide from view'}">${hidden?'♻':'✕'}</button>
       </div>
       <div class="tags">
         ${prio?`<span class="pill prio" style="background:${prioColor(prio)}">${esc(prio)}</span>`:''}
         ${it.category?`<span class="pill cat">${esc(it.category)}</span>`:''}
+        ${facetPills(it)}
+        ${p.note?`<span class="pill cat" title="${esc((p.note||'').slice(0,300))}">📝 Note</span>`:''}
         <span class="pill dl ${di.cls}">${di.has?'⏱ ':'• '}${esc(di.label)}</span>
       </div>
       ${meta.length?`<div class="meta">${meta.map(([k,v])=>`<span><span class="k">${k}:</span> ${esc(v)}</span>`).join('')}</div>`:''}
@@ -467,6 +675,65 @@
     if(!items.length){ el.innerHTML=`<div class="empty"><div class="big">🔍</div>No opportunities match. <button class="morebtn" id="ce2">Clear filters</button></div>`;
       el.querySelector('#ce2')?.addEventListener('click',clearAll); return; }
     el.innerHTML = `<div class="grid">${items.map(cardHtml).join('')}</div>`;
+  }
+
+  /* ---------------- FOCUS (one item at a time, ← → to move) ---------------- */
+  function renderFocus(){
+    const items=visibleItems();
+    const el=document.getElementById('view-browse');
+    if(!items.length){ el.innerHTML=`<div class="empty"><div class="big">🔍</div>No opportunities match. <button class="morebtn" id="ce2">Clear filters</button></div>`;
+      el.querySelector('#ce2')?.addEventListener('click',clearAll); return; }
+    if(state.focusIndex>=items.length) state.focusIndex=items.length-1;
+    if(state.focusIndex<0) state.focusIndex=0;
+    const i=state.focusIndex, it=items[i];
+    el.innerHTML=`<div class="focuswrap">
+      <div class="focusnav">
+        <button class="navbtn" data-focusprev ${i===0?'disabled':''}>‹ Prev</button>
+        <span class="focuscount"><b>${i+1}</b> / ${items.length}</span>
+        <button class="navbtn" data-focusnext ${i===items.length-1?'disabled':''}>Next ›</button>
+      </div>
+      ${focusCardHtml(it)}
+      <div class="focushint">Tip: use the ← and → arrow keys to move between items</div>
+    </div>`;
+  }
+  function focusCardHtml(it){
+    const p=Store.get(it.id); const di=deadlineInfo(it);
+    const prio=it.priority||''; const hidden=!!p.hidden;
+    const meta=[]; if(it.commitment)meta.push(['Commitment',it.commitment]);
+    if(it.location)meta.push(['Location',it.location]); if(it.pay)meta.push(['Pay/Cost',it.pay]);
+    if(it.source)meta.push(['Source',it.source]);
+    const aboutBlock=(it.about||it.knownFor)?`<div class="about">${esc(it.about||'')}${it.knownFor?`<span class="kf">Known for: ${esc(it.knownFor)}</span>`:''}</div>`:'';
+    const noteBlock=p.note?`<div class="about" style="border-left-color:var(--ok)"><span class="kf" style="margin-top:0">Your notes</span>${esc(p.note)}</div>`:'';
+    const statusOpts=STATUS_OPTS.map(s=>`<option ${effStatus(it)===s?'selected':''}>${s}</option>`).join('');
+    return `<article class="focuscard${isStarred(it)?' starred':''}${hidden?' ishidden':''}${facetOf(it).commute==='Too far'?' toofar':''}" style="--pl:${prioColor(prio)}" data-id="${esc(it.id)}">
+      <div class="chead">
+        ${logoHtml(it,46)}
+        <div class="ctitle"><h3>${esc(it.title)}</h3><div class="org">${esc(it.org)}</div></div>
+        <button class="star${isStarred(it)?' on':''}" data-star aria-label="Star" title="Star">${isStarred(it)?'★':'☆'}</button>
+        <button class="hidebtn" data-${hidden?'restore':'hide'} aria-label="${hidden?'Restore':'Hide'}" title="${hidden?'Restore to views':'Hide from view'}">${hidden?'♻':'✕'}</button>
+      </div>
+      <div class="tags">
+        ${prio?`<span class="pill prio" style="background:${prioColor(prio)}">${esc(prio)}</span>`:''}
+        <span class="pill cat">${esc(DATASET_LABEL[it.dataset]||it.dataset)}</span>
+        ${it.category?`<span class="pill cat">${esc(it.category)}</span>`:''}
+        ${facetPills(it)}
+        <span class="pill dl ${di.cls}">${di.has?'⏱ ':'• '}${esc(di.label)}</span>
+      </div>
+      ${meta.length?`<div class="meta">${meta.map(([k,v])=>`<span><span class="k">${k}:</span> ${esc(v)}</span>`).join('')}</div>`:''}
+      ${aboutBlock}
+      ${it.notes?`<div class="fnotes">${esc(it.notes)}</div>`:''}
+      ${noteBlock}
+      <div class="cfoot">
+        ${it.link?`<a class="open" href="${esc(it.link)}" target="_blank" rel="noopener">Open posting ↗</a>`:'<span class="open" style="opacity:.4;background:var(--panel2);color:var(--ink3)">No link</span>'}
+        <select class="stsel" data-status aria-label="Status">${statusOpts}</select>
+        <button class="track" data-track>Notes &amp; tracking ▾</button>
+      </div>
+    </article>`;
+  }
+  function focusStep(delta){
+    const items=visibleItems(); if(!items.length) return;
+    state.focusIndex=Math.max(0,Math.min(items.length-1,state.focusIndex+delta));
+    renderFocus();
   }
 
   /* ---------------- DEADLINES ---------------- */
@@ -499,7 +766,7 @@
   /* ---------------- BOARD ---------------- */
   function renderBoard(){
     const el=document.getElementById('view-board');
-    const items=ITEMS.filter(matches);
+    const items=ITEMS.filter(i=>matches(i,true));
     const cols={}; PIPELINE.forEach(s=>cols[s]=[]);
     items.forEach(it=>{ const s=effStatus(it); (cols[s]||cols['New']).push(it); });
     const exportBar=`<div class="bar" style="padding:0 0 12px"><span style="color:var(--ink2);font-size:13px">Drag cards between columns, or use the status menu. <b>Local-only.</b></span><span style="flex:1"></span>
@@ -535,6 +802,47 @@
     });
   }
 
+  /* ---------------- "more like this" (client-side cosine over vectors.bin) ---------------- */
+  const VEC={ meta:null, vecs:null, row:null, loading:null };
+  function ensureVectors(){
+    if(VEC.vecs) return Promise.resolve(true);
+    if(!VEC.loading){
+      VEC.loading=(async()=>{
+        try{
+          const [meta,buf]=await Promise.all([
+            fetch('vectors-meta.json').then(r=>r.ok?r.json():null),
+            fetch('vectors.bin').then(r=>r.ok?r.arrayBuffer():null),
+          ]);
+          if(!meta||!buf||buf.byteLength!==meta.count*meta.dim*4) return false;
+          VEC.meta=meta; VEC.vecs=new Float32Array(buf);
+          VEC.row=new Map(meta.ids.map((id,i)=>[id,i]));
+          return true;
+        }catch(e){ return false; }
+      })();
+    }
+    return VEC.loading;
+  }
+  function similarTo(id,n){
+    const r=VEC.row.get(id); if(r===undefined) return [];
+    const {dim,count,ids}=VEC.meta, vecs=VEC.vecs, base=r*dim;
+    const scored=[];
+    for(let i=0;i<count;i++){
+      if(i===r) continue;
+      let s=0; const off=i*dim;
+      for(let d=0;d<dim;d++) s+=vecs[off+d]*vecs[base+d];
+      scored.push([s,ids[i]]);
+    }
+    scored.sort((a,b)=>b[0]-a[0]);
+    const res=[];
+    for(const [score,sid] of scored){
+      const it=byId[sid];
+      if(!it || (Store.get(sid).hidden && !state.showHidden)) continue;
+      res.push({it,score});
+      if(res.length>=n) break;
+    }
+    return res;
+  }
+
   /* ---------------- drawer (per-item progress) ---------------- */
   const CHECK=['Resume tailored','Cover letter','Submitted','Followed up'];
   let drawerId=null;
@@ -555,8 +863,25 @@
 
       <div class="dsec"><h4>Status & rating</h4>
         <div class="field"><label>Status</label><select id="d-status">${STATUS_OPTS.map(s=>`<option ${effStatus(it)===s?'selected':''}>${s}</option>`).join('')}</select></div>
-        <div class="field"><label>Star</label><button class="track" id="d-star">${isStarred(it)?'★ Starred':'☆ Star'}</button>
+        <div class="field"><label>Star</label><button class="track${isStarred(it)?' star-on':''}" id="d-star">${isStarred(it)?'★ Starred':'☆ Star'}</button>
           <div class="rate" id="d-rate">${[1,2,3].map(n=>`<button data-r="${n}" class="${p.rating>=n?'on':''}">★</button>`).join('')}</div></div>
+      </div>
+
+      <div class="dsec"><h4>Commute &amp; time</h4>
+        <div class="chips" id="d-commute"></div>
+        <div class="chips" id="d-effort" style="margin-top:8px"></div>
+        <div class="facethint">Dashed = auto-classified by Claude. Tap to override; tap your override again to revert to auto.</div>
+      </div>
+
+      <div class="dsec"><h4>Tags</h4>
+        <div class="chips" id="d-tags"></div>
+        <div class="logadd" style="margin-top:9px"><input id="d-tagin" list="tagopts" placeholder="Add a tag… e.g. robotics, near-G" aria-label="Add tag"><button id="d-tagadd">Add</button></div>
+        <datalist id="tagopts"></datalist>
+      </div>
+
+      <div class="dsec"><h4>My notes</h4>
+        <textarea class="notesarea" id="d-note" placeholder="Add your own private notes about this entry…">${esc(p.note||'')}</textarea>
+        <div class="savehint" id="d-notehint"></div>
       </div>
 
       <div class="dsec"><h4>Key dates</h4>
@@ -574,11 +899,21 @@
       </div>
 
       <div class="dsec"><h4>Why it fits</h4><div class="notes">${esc(it.notes||'—')}</div></div>
+
+      <div class="dsec"><h4>More like this</h4>
+        <div id="d-similar"><button class="track" id="d-simbtn">✨ Show similar items</button></div>
+      </div>
+
+      <div class="dsec">
+        ${p.hidden
+          ? `<button class="restorebtn" id="d-restore">♻ Restore to your views</button>`
+          : `<button class="danger" id="d-hide">✕ Hide this from all views</button>`}
+      </div>
     </div>`;
     // wire
     d.querySelector('#dclose').onclick=closeDrawer;
     d.querySelector('#d-status').onchange=async e=>{ await Store.save(id,{status:e.target.value}); rerenderCurrent(); refreshHeaderCounts(); };
-    d.querySelector('#d-star').onclick=async e=>{ const v=!isStarred(it); await Store.save(id,{starred:v}); e.target.textContent=v?'★ Starred':'☆ Star'; rerenderCurrent(); refreshHeaderCounts(); };
+    d.querySelector('#d-star').onclick=async e=>{ const v=!isStarred(it); await Store.save(id,{starred:v}); e.target.textContent=v?'★ Starred':'☆ Star'; e.target.classList.toggle('star-on', v); rerenderCurrent(); refreshHeaderCounts(); };
     d.querySelector('#d-rate').addEventListener('click',async e=>{ const b=e.target.closest('[data-r]'); if(!b)return;
       let r=+b.dataset.r; if(Store.get(id).rating===r)r=0; await Store.save(id,{rating:r});
       d.querySelectorAll('#d-rate button').forEach(x=>x.classList.toggle('on',+x.dataset.r<=r)); });
@@ -590,30 +925,104 @@
       const p2=await Store.addLog(id,t); inp.value=''; d.querySelector('#d-log').innerHTML=renderLog(p2); rerenderCurrent(); };
     d.querySelector('#d-logadd').onclick=addLog;
     d.querySelector('#d-logtext').addEventListener('keydown',e=>{ if(e.key==='Enter')addLog(); });
-    document.getElementById('scrim').classList.add('open');
-    d.classList.add('open'); d.setAttribute('aria-hidden','false');
+    // free-form notes (debounced autosave)
+    const noteEl=d.querySelector('#d-note'); let noteT=null;
+    noteEl.addEventListener('input',()=>{
+      const hint=d.querySelector('#d-notehint'); hint.textContent='Saving…';
+      clearTimeout(noteT);
+      noteT=setTimeout(async()=>{ await Store.save(id,{note:noteEl.value});
+        if(d.querySelector('#d-notehint')){ d.querySelector('#d-notehint').textContent='Saved ✓';
+          setTimeout(()=>{ const hh=d.querySelector('#d-notehint'); if(hh)hh.textContent=''; },1200); }
+        rerenderCurrent(); }, 450);
+    });
+    // facet override chips (manual wins over auto; tapping the override clears it)
+    function renderFacetChips(){
+      const fc=facetOf(it);
+      const chips=(vals,cur,isAuto)=>vals.map(v=>
+        `<button class="chip" aria-pressed="${cur===v}" data-fv="${esc(v)}"${cur===v&&isAuto?' style="border-style:dashed"':''}>${esc(v)}</button>`).join('');
+      d.querySelector('#d-commute').innerHTML=chips(COMMUTE_VALS,fc.commute,fc.commuteAuto);
+      d.querySelector('#d-effort').innerHTML=chips(EFFORT_VALS,fc.effort,fc.effortAuto);
+    }
+    renderFacetChips();
+    const facetClick=(sel,key)=>d.querySelector(sel).addEventListener('click',async e=>{
+      const b=e.target.closest('[data-fv]'); if(!b)return;
+      const v=b.dataset.fv, cur=Store.get(id)[key];
+      await Store.save(id,{[key]: cur===v?'':v});
+      renderFacetChips(); buildFilters(); rerenderCurrent();
+    });
+    facetClick('#d-commute','facetCommute');
+    facetClick('#d-effort','facetEffort');
+    // tags
+    function renderTagChips(){
+      const tags=tagsOf(it);
+      d.querySelector('#d-tags').innerHTML = tags.length
+        ? tags.map(t=>`<span class="chip tagchip" aria-pressed="true">#${esc(t)} <button data-rmtag="${esc(t)}" aria-label="Remove tag ${esc(t)}">×</button></span>`).join('')
+        : '<span style="color:var(--ink3);font-size:12.5px">No tags yet.</span>';
+      d.querySelector('#tagopts').innerHTML=allTags().map(t=>`<option value="${esc(t)}">`).join('');
+    }
+    renderTagChips();
+    const addTag=async()=>{
+      const inp=d.querySelector('#d-tagin');
+      const t=inp.value.trim().replace(/^#+/,'');
+      if(!t)return;
+      await Store.save(id,{tags:[...new Set([...tagsOf(it),t])]});
+      inp.value='';
+      renderTagChips(); buildFilters(); rerenderCurrent();
+    };
+    d.querySelector('#d-tagadd').onclick=addTag;
+    d.querySelector('#d-tagin').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); addTag(); } });
+    d.querySelector('#d-tags').addEventListener('click',async e=>{
+      const b=e.target.closest('[data-rmtag]'); if(!b)return;
+      await Store.save(id,{tags:tagsOf(it).filter(t=>t!==b.dataset.rmtag)});
+      renderTagChips(); buildFilters(); rerenderCurrent();
+    });
+    // more like this
+    async function renderSimilar(){
+      const box=d.querySelector('#d-similar'); if(!box)return;
+      box.innerHTML='<span style="color:var(--ink3);font-size:12.5px">Loading…</span>';
+      const ok=await ensureVectors();
+      if(drawerId!==id) return; // drawer moved on
+      if(!ok){ box.innerHTML='<span style="color:var(--ink3);font-size:12.5px">Similarity data not available — run embed.mjs.</span>'; return; }
+      const sims=similarTo(id,8);
+      box.innerHTML=sims.map(({it:s,score})=>
+        `<div class="simitem" data-sim="${esc(s.id)}">
+          <div class="ti"><b>${esc(s.title)}</b><span class="o">${esc(s.org)}${s.location?' · '+esc(s.location):''}</span></div>
+          <span class="s">${Math.round(score*100)}</span>
+        </div>`).join('') || '<span style="color:var(--ink3);font-size:12.5px">Nothing similar found.</span>';
+      box.querySelectorAll('[data-sim]').forEach(el=>el.onclick=()=>openDrawer(el.dataset.sim));
+    }
+    if(VEC.vecs) renderSimilar();
+    else { const sb=d.querySelector('#d-simbtn'); if(sb) sb.onclick=renderSimilar; }
+    // hide / restore
+    const hideBtn=d.querySelector('#d-hide'); if(hideBtn) hideBtn.onclick=()=>hideItem(id);
+    const restBtn=d.querySelector('#d-restore'); if(restBtn) restBtn.onclick=async()=>{
+      await Store.save(id,{hidden:false}); closeDrawer(); render(); refreshHeaderCounts(); };
+    document.getElementById('scrim').classList.add('is-open');
+    d.classList.add('is-open'); d.setAttribute('aria-hidden','false');
   }
   function renderLog(p){
     if(!p.log||!p.log.length) return '<div style="color:var(--ink3);font-size:13px">No entries yet.</div>';
     return p.log.map(l=>`<div class="logitem"><time>${new Date(l.ts).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</time>${esc(l.text)}</div>`).join('');
   }
-  function closeDrawer(){ drawerId=null; document.getElementById('drawer').classList.remove('open');
-    document.getElementById('drawer').setAttribute('aria-hidden','true'); document.getElementById('scrim').classList.remove('open'); }
+  function closeDrawer(){ drawerId=null; document.getElementById('drawer').classList.remove('is-open');
+    document.getElementById('drawer').setAttribute('aria-hidden','true'); document.getElementById('scrim').classList.remove('is-open'); }
 
   /* ---------------- view switching / render ---------------- */
   function render(){
-    document.getElementById('resultCount').textContent =
-      state.view==='board' ? `${ITEMS.filter(matches).length} on board` :
+    document.getElementById('resultCount').innerHTML =
+      state.view==='board' ? `${ITEMS.filter(i=>matches(i,true)).length} on board` :
       state.view==='deadlines' ? `${ITEMS.filter(i=>matches(i)&&deadlineInfo(i).has).length} dated` :
-      `${visibleItems().length} of ${ITEMS.length} shown`;
-    if(state.view==='browse') renderBrowse();
+      `${visibleItems().length} of ${ITEMS.length} shown` + (semActive()?` · <span class="semtag">✨ semantic match</span>`:'');
+    if(state.view==='browse') (state.layout==='focus'?renderFocus:renderBrowse)();
     else if(state.view==='deadlines') renderDeadlines();
     else renderBoard();
   }
   function rerenderCurrent(){ render(); }
   function clearAll(){ state.search=''; document.getElementById('search').value=''; document.getElementById('clrSearch').hidden=true;
+    SEM.q=''; SEM.scores.clear();
     for(const k in state.filters) state.filters[k].clear(); state.needsTriage=false; document.getElementById('needsTriage').checked=false;
-    buildFilters(); updateFilterBadge(); render(); }
+    state.focusIndex=0;
+    buildFilters(); renderDatasetBar(); updateFilterBadge(); render(); }
 
   /* ---------------- events ---------------- */
   function switchView(v){ state.view=v;
@@ -621,25 +1030,73 @@
     document.getElementById('view-browse').hidden=v!=='browse';
     document.getElementById('view-deadlines').hidden=v!=='deadlines';
     document.getElementById('view-board').hidden=v!=='board';
+    document.getElementById('layoutToggle').style.display = v==='browse' ? 'inline-flex' : 'none';
     render();
   }
+
+  /* ---------------- hide / restore + undo toast ---------------- */
+  async function hideItem(id){
+    await Store.save(id,{hidden:true});
+    if(drawerId===id) closeDrawer();
+    render(); refreshHeaderCounts();
+    showToast('Hidden from your views.', 'Undo', async()=>{
+      await Store.save(id,{hidden:false}); render(); refreshHeaderCounts();
+    });
+  }
+  let toastTimer=null;
+  function showToast(msg, actionLabel, onAction){
+    const t=document.getElementById('toast');
+    t.innerHTML=`<span>${esc(msg)}</span>`+(actionLabel?`<button type="button" id="toastAct">${esc(actionLabel)}</button>`:'');
+    t.classList.add('show');
+    if(actionLabel) t.querySelector('#toastAct').onclick=()=>{ hideToast(); onAction&&onAction(); };
+    clearTimeout(toastTimer); toastTimer=setTimeout(hideToast, 5000);
+  }
+  function hideToast(){ document.getElementById('toast').classList.remove('show'); }
   document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>switchView(t.dataset.view)));
+  document.getElementById('datasetBar').addEventListener('click',e=>{
+    const b=e.target.closest('[data-ds]'); if(!b)return;
+    const v=b.dataset.ds, set=state.filters.dataset;
+    if(v==='__all') set.clear();
+    else if(set.has(v)) set.delete(v); else set.add(v);
+    state.focusIndex=0;
+    renderDatasetBar(); buildFilters(); updateFilterBadge(); render();
+  });
+  document.getElementById('layoutToggle').addEventListener('click',e=>{
+    const b=e.target.closest('[data-layout]'); if(!b)return;
+    state.layout=b.dataset.layout; syncLayoutToggle(); render();
+  });
+  document.getElementById('showHidden').onchange=e=>{ state.showHidden=e.target.checked; state.focusIndex=0; render(); };
   document.getElementById('search').addEventListener('input',e=>{ state.search=e.target.value.trim();
-    document.getElementById('clrSearch').hidden=!e.target.value; updateFilterBadge(); render(); });
+    document.getElementById('clrSearch').hidden=!e.target.value; scheduleSemantic(); updateFilterBadge(); render(); });
   document.getElementById('clrSearch').onclick=()=>{ state.search=''; const s=document.getElementById('search'); s.value=''; s.focus();
+    SEM.q=''; SEM.scores.clear();
     document.getElementById('clrSearch').hidden=true; updateFilterBadge(); render(); };
-  document.getElementById('filtBtn').onclick=()=>document.getElementById('filtPanel').classList.toggle('open');
+  document.getElementById('filtBtn').onclick=()=>document.getElementById('filtPanel').classList.toggle('is-open');
   document.getElementById('clearFilt').onclick=clearAll;
+  document.getElementById('hidePast').onchange=e=>{ state.hidePast=e.target.checked; render(); };
   document.getElementById('hideTerminal').onchange=e=>{ state.hideTerminal=e.target.checked; render(); };
   document.getElementById('needsTriage').onchange=e=>{ state.needsTriage=e.target.checked; updateFilterBadge(); render(); };
   document.getElementById('sort').onchange=e=>{ state.sort=e.target.value; render(); };
   document.getElementById('scrim').onclick=closeDrawer;
-  document.addEventListener('keydown',e=>{ if(e.key==='Escape')closeDrawer(); });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){ closeDrawer(); return; }
+    // ← / → step through items in Focus view (ignore while typing or with the drawer open)
+    if(state.view==='browse' && state.layout==='focus' && !drawerId){
+      const tag=(e.target.tagName||'').toLowerCase();
+      if(tag==='input'||tag==='textarea'||tag==='select') return;
+      if(e.key==='ArrowLeft'){ focusStep(-1); e.preventDefault(); }
+      else if(e.key==='ArrowRight'){ focusStep(1); e.preventDefault(); }
+    }
+  });
 
   // delegated card interactions
   document.querySelector('main').addEventListener('click',async e=>{
+    if(e.target.closest('[data-focusprev]')){ focusStep(-1); return; } // focus nav lives outside any [data-id] card
+    if(e.target.closest('[data-focusnext]')){ focusStep(1); return; }
     const card=e.target.closest('[data-id]'); if(!card)return; const id=card.dataset.id;
     if(e.target.closest('[data-star]')){ const v=!isStarred(byId[id]); await Store.save(id,{starred:v}); render(); refreshHeaderCounts(); return; }
+    if(e.target.closest('[data-hide]')){ await hideItem(id); return; }
+    if(e.target.closest('[data-restore]')){ await Store.save(id,{hidden:false}); render(); refreshHeaderCounts(); return; }
     if(e.target.closest('[data-more]')){ const n=card.querySelector('[data-notes]'); n.classList.toggle('clamp');
       e.target.textContent=n.classList.contains('clamp')?'Show more':'Show less'; return; }
     if(e.target.closest('[data-track]')){ openDrawer(id); return; }
@@ -652,13 +1109,38 @@
     if(state.view!=='browse' || state.hideTerminal || state.needsTriage || state.filters.status.size) render();
   });
 
+  /* ---------------- collapsible header (manual button only) ----------------
+     Note: an earlier build also auto-collapsed/expanded on scroll direction. With a
+     position:sticky header that grows/shrinks, that fought scroll-anchoring and made
+     the bar visibly bounce while scrolling. Collapse is now driven ONLY by the button. */
+  (function(){
+    const hdr=document.querySelector('header.app'), btn=document.getElementById('barToggle'), panel=document.getElementById('filtPanel');
+    const collapsibles=hdr.querySelectorAll('.counts,.bar,.resultline');
+    function setCollapsed(v){
+      if(hdr.classList.contains('collapsed')===v) return;
+      hdr.classList.toggle('collapsed', v);
+      btn.setAttribute('aria-expanded', String(!v));
+      btn.title = v ? 'Show search & filters' : 'Collapse search & filters';
+      collapsibles.forEach(el=>{ el.inert=v; }); // pull the hidden controls out of tab order + the a11y tree
+      if(v && panel) panel.classList.remove('is-open'); // don't leave the filter panel floating when collapsed
+    }
+    btn.addEventListener('click',()=>{
+      const y0=window.scrollY||0;
+      const willExpand = hdr.classList.contains('collapsed');
+      setCollapsed(!willExpand);
+      if(willExpand){ const s=document.getElementById('search'); if(s) s.focus({preventScroll:true}); }
+      // keep the reader's place: undo any scroll-anchoring jump the header resize causes
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{ if((window.scrollY||0)!==y0) window.scrollTo(0,y0); }));
+    });
+  })();
+
   /* ---------------- boot ---------------- */
   (async function boot(){
     await Store.init();
     const badge=document.getElementById('storeBadge'), txt=document.getElementById('storeTxt');
     if(Store.backend==='sqlite'){ badge.classList.add('sqlite'); txt.textContent='Saving to: this Mac (SQLite)'; }
     else { badge.classList.add('local'); txt.textContent='Saving to: this browser only'; }
-    renderHeader(); buildFilters(); updateFilterBadge(); render();
+    renderHeader(); buildFilters(); renderDatasetBar(); syncLayoutToggle(); updateFilterBadge(); render();
   })();
 })();
 </script>

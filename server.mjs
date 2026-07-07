@@ -16,12 +16,59 @@ process.on('warning', (w) => { if (w.name !== 'ExperimentalWarning') console.war
 
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
+import { readFileSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, normalize, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DatabaseSync } from 'node:sqlite';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT) || 4317;
+
+/* ---------- semantic search (vectors built by embed.mjs) ---------- */
+// Query embedding runs locally via @huggingface/transformers; the pipeline is
+// lazy-loaded on the first /api/semantic call (~2s warmup, instant after).
+let vecCache = null; // { mtime, meta, vecs }
+function loadVectors() {
+  const binPath = join(__dirname, 'vectors.bin');
+  const metaPath = join(__dirname, 'vectors-meta.json');
+  if (!existsSync(binPath) || !existsSync(metaPath)) return null;
+  const mtime = statSync(binPath).mtimeMs;
+  if (vecCache && vecCache.mtime === mtime) return vecCache;
+  const meta = JSON.parse(readFileSync(metaPath, 'utf8'));
+  const buf = readFileSync(binPath);
+  if (buf.length !== meta.count * meta.dim * 4) return null;
+  const vecs = new Float32Array(buf.buffer, buf.byteOffset, meta.count * meta.dim);
+  vecCache = { mtime, meta, vecs };
+  return vecCache;
+}
+let extractorPromise = null;
+function getExtractor(model) {
+  if (!extractorPromise) {
+    extractorPromise = import('@huggingface/transformers')
+      .then(({ pipeline }) => pipeline('feature-extraction', model, { dtype: 'q8' }));
+  }
+  return extractorPromise;
+}
+async function semanticSearch(q, limit = 40) {
+  const v = loadVectors();
+  if (!v) return { error: 'no vectors — run embed.mjs' };
+  const { meta, vecs } = v;
+  const extractor = await getExtractor(meta.model);
+  const t = await extractor([meta.queryPrefix + q], { pooling: 'mean', normalize: true });
+  const qv = t.data; // Float32Array [dim], L2-normalized
+  const dim = meta.dim;
+  const scores = new Array(meta.count);
+  for (let i = 0; i < meta.count; i++) {
+    let s = 0;
+    const off = i * dim;
+    for (let d = 0; d < dim; d++) s += vecs[off + d] * qv[d];
+    scores[i] = [s, i];
+  }
+  scores.sort((a, b) => b[0] - a[0]);
+  return {
+    results: scores.slice(0, limit).map(([score, i]) => ({ id: meta.ids[i], score: Number(score.toFixed(4)) })),
+  };
+}
 
 /* ---------- database ---------- */
 const db = new DatabaseSync(join(__dirname, 'app.db'));
@@ -44,14 +91,20 @@ db.exec(`
   );
   CREATE INDEX IF NOT EXISTS idx_activity_item ON activity(item_id);
 `);
+// migrations: add columns to pre-existing progress tables (ALTER is a no-op-if-exists via try/catch)
+for (const col of ['note TEXT', 'hidden INTEGER DEFAULT 0', 'tags TEXT', 'facet_commute TEXT', 'facet_effort TEXT']) {
+  try { db.exec(`ALTER TABLE progress ADD COLUMN ${col}`); } catch { /* column already exists */ }
+}
 
 const upsert = db.prepare(`
-  INSERT INTO progress (item_id, status, starred, rating, applied_on, follow_up_on, checklist, updated_at)
-  VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+  INSERT INTO progress (item_id, status, starred, rating, applied_on, follow_up_on, checklist, note, hidden, tags, facet_commute, facet_effort, updated_at)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   ON CONFLICT(item_id) DO UPDATE SET
     status=excluded.status, starred=excluded.starred, rating=excluded.rating,
     applied_on=excluded.applied_on, follow_up_on=excluded.follow_up_on,
-    checklist=excluded.checklist, updated_at=excluded.updated_at
+    checklist=excluded.checklist, note=excluded.note, hidden=excluded.hidden,
+    tags=excluded.tags, facet_commute=excluded.facet_commute, facet_effort=excluded.facet_effort,
+    updated_at=excluded.updated_at
 `);
 const selAll = db.prepare(`SELECT * FROM progress`);
 const selOne = db.prepare(`SELECT * FROM progress WHERE item_id = ?`);
@@ -69,6 +122,11 @@ function rowToProgress(r) {
     appliedOn: r.applied_on || '',
     followUpOn: r.follow_up_on || '',
     checklist: r.checklist ? JSON.parse(r.checklist) : {},
+    note: r.note || '',
+    hidden: !!r.hidden,
+    tags: r.tags ? JSON.parse(r.tags) : [],
+    facetCommute: r.facet_commute || '',
+    facetEffort: r.facet_effort || '',
     updatedAt: r.updated_at || '',
     log: selLog.all(r.item_id).map((l) => ({ id: l.id, ts: l.ts, text: l.text })),
   };
@@ -97,11 +155,11 @@ async function readBody(req) {
 
 function progressToCsv(rows, logsByItem) {
   const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
-  const head = ['item_id', 'status', 'starred', 'rating', 'applied_on', 'follow_up_on', 'checklist', 'updated_at', 'activity_log'];
+  const head = ['item_id', 'status', 'starred', 'rating', 'applied_on', 'follow_up_on', 'checklist', 'note', 'hidden', 'tags', 'facet_commute', 'facet_effort', 'updated_at', 'activity_log'];
   const lines = [head.join(',')];
   for (const r of rows) {
     const logs = (logsByItem[r.item_id] || []).map((l) => `${l.ts}: ${l.text}`).join(' | ');
-    lines.push([r.item_id, r.status, r.starred, r.rating, r.applied_on, r.follow_up_on, r.checklist, r.updated_at, logs].map(esc).join(','));
+    lines.push([r.item_id, r.status, r.starred, r.rating, r.applied_on, r.follow_up_on, r.checklist, r.note, r.hidden, r.tags, r.facet_commute, r.facet_effort, r.updated_at, logs].map(esc).join(','));
   }
   return lines.join('\n');
 }
@@ -127,7 +185,15 @@ const server = createServer(async (req, res) => {
   const url = new URL(req.url, `http://localhost:${PORT}`);
   const p = url.pathname;
   try {
-    if (p === '/api/health') return json(res, 200, { ok: true, port: PORT });
+    if (p === '/api/health') return json(res, 200, { ok: true, port: PORT, semantic: !!loadVectors() });
+
+    if (p === '/api/semantic' && req.method === 'GET') {
+      const q = (url.searchParams.get('q') || '').trim();
+      if (!q) return json(res, 400, { error: 'empty query' });
+      const limit = Math.min(Number(url.searchParams.get('limit')) || 40, 200);
+      const out = await semanticSearch(q, limit);
+      return json(res, out.error ? 503 : 200, out);
+    }
 
     if (p === '/api/progress' && req.method === 'GET') {
       return json(res, 200, selAll.all().map(rowToProgress));
@@ -145,9 +211,15 @@ const server = createServer(async (req, res) => {
         appliedOn: b.appliedOn ?? cur?.applied_on ?? '',
         followUpOn: b.followUpOn ?? cur?.follow_up_on ?? '',
         checklist: b.checklist ?? (cur?.checklist ? JSON.parse(cur.checklist) : {}),
+        note: b.note ?? cur?.note ?? '',
+        hidden: (b.hidden ?? !!cur?.hidden) ? 1 : 0,
+        tags: b.tags ?? (cur?.tags ? JSON.parse(cur.tags) : []),
+        facetCommute: b.facetCommute ?? cur?.facet_commute ?? '',
+        facetEffort: b.facetEffort ?? cur?.facet_effort ?? '',
       };
       upsert.run(id, merged.status, merged.starred, merged.rating, merged.appliedOn,
-        merged.followUpOn, JSON.stringify(merged.checklist), new Date().toISOString());
+        merged.followUpOn, JSON.stringify(merged.checklist), merged.note, merged.hidden,
+        JSON.stringify(merged.tags), merged.facetCommute, merged.facetEffort, new Date().toISOString());
       return json(res, 200, rowToProgress(selOne.get(id)));
     }
 
@@ -159,7 +231,7 @@ const server = createServer(async (req, res) => {
       if (!text) return json(res, 400, { error: 'empty' });
       const ts = b.ts || new Date().toISOString();
       // ensure a progress row exists so the item shows on the board
-      if (!selOne.get(id)) upsert.run(id, 'New', 0, 0, '', '', '{}', new Date().toISOString());
+      if (!selOne.get(id)) upsert.run(id, 'New', 0, 0, '', '', '{}', '', 0, '[]', '', '', new Date().toISOString());
       insLog.run(id, ts, text);
       return json(res, 200, rowToProgress(selOne.get(id)));
     }

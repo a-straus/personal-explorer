@@ -26,3 +26,4 @@ Thumbs.db
 # Build logs
 .enrich.log
 .server.log
+.classify-cache.json
