@@ -1,0 +1,34 @@
+# Keep the Docker build context tiny — the Dockerfile COPYs only the static
+# runtime bundle, but excluding these avoids shipping secrets/bloat as context.
+node_modules
+.git
+.env
+.env.*
+*.local
+app.db
+app.db-journal
+app.db-wal
+app.db-shm
+*.sqlite
+*.sqlite3
+.classify-cache.json
+.enrich-cache.json
+.enrich.log
+.server.log
+ui-*.png
+verification
+data.json
+
+# Dev/build tooling — not needed to serve the static bundle.
+classify.mjs
+embed.mjs
+enrich.mjs
+refresh-data.mjs
+server.mjs
+verify.mjs
+verify-ui.mjs
+package.json
+package-lock.json
+
+# Docs
+*.md

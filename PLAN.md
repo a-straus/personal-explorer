@@ -20,7 +20,7 @@ scheduled Claude runs ──▶ Airtable base app6mRGGi2xLKqR2i (3 tables)
         data.js / data.json ──▶ embed.mjs ──▶ vectors.bin + vectors-meta.json
                               └▶ classify.mjs ──▶ facets.js / facets.json
                               ▼
-   index.html (single-file app) ── deployed to Cloudflare Pages (git push → build)
+   index.html (single-file app) ── deployed via Railway Dockerfile (git push → build)
                               │
              local only: server.mjs (localhost:4317)
                ├─ SQLite app.db: status/stars/notes/tags/facet-overrides/log
@@ -83,34 +83,36 @@ Key files: `index.html` (whole app), `server.mjs` (local API + semantic),
 
 ## 5. Known bugs & open issues
 
-### 🔴 BUG-1: Cloudflare Pages build failed after push `cd02bbb` (2026-07-07)
+### ✅ BUG-1 (RESOLVED 2026-07-07): deploy build failed — wrong platform diagnosed
 
-Owner received a failed-build email right after the push. Log text not yet
-captured. What we know from the repo:
+**The failing build was on Railway, not Cloudflare Pages.** The original handoff
+assumed Cloudflare, but the GitHub commit status on `8e5421b` pointed at a
+**Railway** deployment (`state: failure`), and the repo has **no Cloudflare
+integration at all** (zero check-runs) and **no deploy config of any kind**. So
+Railway was auto-detecting the repo via **Nixpacks** and trying to build this pure
+static site as a Node service — which fails two ways:
 
-- Previous successful deploys built with a `package.json` containing **only
-  playwright**. This push added **`@huggingface/transformers`** to devDependencies.
-- **`package-lock.json` has never been committed** (gitignored). If the Pages build
-  command runs `npm ci`, it hard-fails without a lockfile.
+1. **Install phase** runs `npm ci`, pulling the dev-only deps
+   `@huggingface/transformers` → `onnxruntime-node` (has a `postinstall` that
+   **downloads a native binary from a CDN** — confirmed in `node_modules`) and
+   `sharp` (builds/fetches libvips). Classic CI breakers.
+2. **No start command** — there's no `start` script and no server that runs without
+   those heavy deps, so even a clean install has nothing to launch.
 
-Hypotheses, ranked, with fixes:
+**Fix applied (this session):** added a repo-root **`Dockerfile`** + **`.dockerignore`**
++ **`static-server.mjs`** (zero-dependency Node static server binding
+`0.0.0.0:$PORT`). A Dockerfile at the root makes Railway build with Docker instead
+of Nixpacks, so **no `npm install` runs** — it copies only the runtime bundle
+(`index.html`, `data.js`, `enrichment.js`, `facets.js`, `vectors.bin`,
+`vectors-meta.json`, `assets/`) and serves it. Verified locally end-to-end:
+`docker build` succeeds, the container serves every bundle file with correct MIME
+types, 404s missing files, and blocks path traversal (403). Lockfile from `8e5421b`
+is now moot for the deploy (Docker path ignores it) but harmless to keep.
 
-1. **`npm ci` with no lockfile** → fix: commit `package-lock.json`
-   (**applied 2026-07-07** — un-ignored and pushed; if the next build goes green,
-   this was it).
-2. **`@huggingface/transformers` install fails in the Pages build image** — its
-   native deps (`sharp`, `onnxruntime-node`) download binaries at install time and
-   are classic CI breakers → fix options, in order of preference:
-   a. Pages dashboard → Settings → Builds: framework preset **None**, build command
-      **empty** — this site is pure static files and needs no npm at all;
-   b. or move dev tooling into `tools/package.json` (and move the `.mjs` scripts
-      with it, since ESM resolution walks up, not down).
-3. **Node engine mismatch** (Pages default Node vs transformers' requirement) →
-   fix: add a `.node-version` file (e.g. `22`) at repo root.
-
-**Next diagnostic step: read the actual error** — Cloudflare dashboard → Workers &
-Pages → the project → failed deployment → build log (or paste the email text).
-Don't apply fix 2b without confirming 2 is the cause.
+**Note the platform discrepancy for the owner:** §2 records Cloudflare as the target
+platform, but the live pipeline is Railway. The Dockerfile fix does not preclude
+moving to Cloudflare Pages later (a pure-static repo needs no build there). Decide
+which host is canonical and disconnect the other to avoid double-deploys.
 
 ### 🟡 NOT-A-BUG: local server exited with code 143
 
@@ -137,8 +139,10 @@ build, this was a local process). Restart anytime with `./start.command` or
 
 ## 6. Next steps, in order
 
-1. **Fix the Pages build (BUG-1).** Lockfile pushed; watch the next build, then work
-   the hypothesis list above. Everything else is blocked on deploys working.
+1. **~~Fix the Pages build (BUG-1).~~ DONE.** Real cause was Railway/Nixpacks, not
+   Cloudflare; fixed with a Dockerfile static-serve (see §5). Push and confirm the
+   next Railway build goes green. Owner: decide Railway vs Cloudflare as canonical
+   host (§5 note).
 2. **Semantic search on Cloudflare — small Worker (~60 lines, owner already leaning
    yes).** `GET /api/semantic?q=` → Workers AI `@cf/baai/bge-small-en-v1.5` embeds
    the query (keep `queryPrefix`!) → cosine over `vectors.bin` (fetch from the
@@ -161,7 +165,9 @@ build, this was a local process). Restart anytime with `./start.command` or
 node server.mjs                 # http://localhost:4317
 node verify-ui.mjs              # Playwright E2E: boot, facets, filters, semantic,
                                 # drawer overrides, tags, more-like-this (15 checks)
-node verify.mjs                 # older data-integrity checks
+node verify.mjs                 # STALE — hardcoded June counts (100/45/40, 504)
+                                # and pre-filter-panel selectors; 7 expected FAILs.
+                                # verify-ui.mjs (above) is the current suite.
 ```
 
 The refresh loop (idempotent, run after the scheduled runs have added items):

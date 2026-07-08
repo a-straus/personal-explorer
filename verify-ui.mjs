@@ -25,7 +25,9 @@ check('facet pills on cards', facetPills > 20, `${facetPills} pills`);
 // 3. Filter panel has Commute / Time commitment groups
 await page.click('#filtBtn');
 const panelText = await page.locator('#filtPanel').textContent();
-check('commute filter group', panelText.includes('Commute') && panelText.includes('Walkable'));
+// Filter chips render only for commute values present in the data; no item is
+// classified "Walkable" (see PLAN.md §5), so assert against a value that exists.
+check('commute filter group', panelText.includes('Commute') && panelText.includes('Short transit'));
 check('effort filter group', panelText.includes('Time commitment') && panelText.includes('Full-time'));
 
 // 4. Click "Remote" commute chip → count drops and all visible cards are Remote
