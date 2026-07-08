@@ -23,7 +23,10 @@
   .wrap{max-width:1440px;margin:0 auto;padding:0 18px 80px}
 
   /* ---- header ---- */
-  header.app{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,var(--bg) 70%,transparent);backdrop-filter:blur(6px);padding-top:14px}
+  header.app{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,var(--bg) 70%,transparent);backdrop-filter:blur(6px);padding-top:14px;transition:transform .25s ease}
+  /* auto-hide: slide the whole nav out of the way on scroll-down, reveal on scroll-up.
+     transform (not a height change) so it never reflows content or fights scroll-anchoring. */
+  header.app.autohidden{transform:translateY(-100%)}
   .topline{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
   .logo-h{font-size:20px;font-weight:750;letter-spacing:-.3px}
   .logo-h .dot{color:var(--accent)}
@@ -53,7 +56,7 @@
     max-height:0;opacity:0;margin-top:0;margin-bottom:0;padding-top:0;padding-bottom:0;pointer-events:none}
   header.app.collapsed .panel{display:none}
   @media (prefers-reduced-motion:reduce){
-    header.app .counts,header.app .bar,header.app .resultline,.bartoggle .chev{transition:none}
+    header.app,header.app .counts,header.app .bar,header.app .resultline,.bartoggle .chev{transition:none}
   }
 
   /* ---- dataset bar (Airtable definitions) + layout toggle — always visible ---- */
@@ -1132,6 +1135,27 @@
       // keep the reader's place: undo any scroll-anchoring jump the header resize causes
       requestAnimationFrame(()=>requestAnimationFrame(()=>{ if((window.scrollY||0)!==y0) window.scrollTo(0,y0); }));
     });
+  })();
+
+  /* ---------------- auto-hide nav on scroll ----------------
+     Slide the whole sticky nav out of the way when scrolling down (so it stops
+     covering the opportunities), bring it back the moment you scroll up. Uses a
+     transform, so no reflow / scroll-anchoring bounce. rAF-throttled. */
+  (function(){
+    const hdr=document.querySelector('header.app');
+    let lastY=window.scrollY||0, ticking=false;
+    const REVEAL_AT_TOP=80;   // always show the nav near the very top
+    const DELTA=6;            // ignore tiny jitters
+    function update(){
+      const y=window.scrollY||0;
+      if(y<=REVEAL_AT_TOP){ hdr.classList.remove('autohidden'); }
+      else if(y>lastY+DELTA){ hdr.classList.add('autohidden'); }   // scrolling down → hide
+      else if(y<lastY-DELTA){ hdr.classList.remove('autohidden'); } // scrolling up → show
+      lastY=y; ticking=false;
+    }
+    window.addEventListener('scroll',()=>{
+      if(!ticking){ ticking=true; requestAnimationFrame(update); }
+    },{passive:true});
   })();
 
   /* ---------------- boot ---------------- */

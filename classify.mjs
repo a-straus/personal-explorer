@@ -32,7 +32,7 @@ const CACHE_PATH = join(__dirname, '.classify-cache.json');
 const CLAUDE_KEY = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY || '';
 if (!CLAUDE_KEY) { console.error('No ANTHROPIC_API_KEY / CLAUDE_API_KEY in .env — cannot classify.'); process.exit(1); }
 
-const MODEL = 'claude-opus-4-8';
+const MODEL = 'claude-sonnet-5';
 const COMMUTE = ['Walkable', 'Short transit', 'Long haul', 'Too far', 'Remote', 'Unknown'];
 const EFFORT = ['<2 hrs/wk', '2–5 hrs/wk', '5–15 hrs/wk', '15+ hrs/wk', 'Full-time', 'Unknown'];
 
