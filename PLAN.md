@@ -20,7 +20,8 @@ scheduled Claude runs ──▶ Airtable base app6mRGGi2xLKqR2i (3 tables)
         data.js / data.json ──▶ embed.mjs ──▶ vectors.bin + vectors-meta.json
                               └▶ classify.mjs ──▶ facets.js / facets.json
                               ▼
-   index.html (single-file app) ── deployed via Railway Dockerfile (git push → build)
+   index.html (single-file app) ── Cloudflare Pages "airtable-explorer" (git push → deploy)
+                                    → teaching.straus.digital (behind Cloudflare Access)
                               │
              local only: server.mjs (localhost:4317)
                ├─ SQLite app.db: status/stars/notes/tags/facet-overrides/log
@@ -83,36 +84,35 @@ Key files: `index.html` (whole app), `server.mjs` (local API + semantic),
 
 ## 5. Known bugs & open issues
 
-### ✅ BUG-1 (RESOLVED 2026-07-07): deploy build failed — wrong platform diagnosed
+### ✅ BUG-1 (RESOLVED 2026-07-08): failed-build emails were Railway, not Cloudflare
 
-**The failing build was on Railway, not Cloudflare Pages.** The original handoff
-assumed Cloudflare, but the GitHub commit status on `8e5421b` pointed at a
-**Railway** deployment (`state: failure`), and the repo has **no Cloudflare
-integration at all** (zero check-runs) and **no deploy config of any kind**. So
-Railway was auto-detecting the repo via **Nixpacks** and trying to build this pure
-static site as a Node service — which fails two ways:
+**The real host is Cloudflare Pages; the failing build was a leftover Railway
+integration.** Established 2026-07-08 by inspecting the live site and GitHub:
 
-1. **Install phase** runs `npm ci`, pulling the dev-only deps
-   `@huggingface/transformers` → `onnxruntime-node` (has a `postinstall` that
-   **downloads a native binary from a CDN** — confirmed in `node_modules`) and
-   `sharp` (builds/fetches libvips). Classic CI breakers.
-2. **No start command** — there's no `start` script and no server that runs without
-   those heavy deps, so even a clean install has nothing to launch.
+- **Live site:** `teaching.straus.digital` → CNAME → **`airtable-explorer.pages.dev`**
+  (Cloudflare Pages project **`airtable-explorer`**), behind **Cloudflare Access**
+  (only `straus.claw@gmail.com`). This is canonical and healthy.
+- **Railway:** a separate integration (`railway-app[bot]`) was connected to the
+  GitHub repo around the `cd02bbb` push and auto-deploying every commit to `prod` +
+  `dev`. **Its** Nixpacks build was failing (tried to build this static site as a
+  Node service → `npm ci` pulls `@huggingface/transformers` → `onnxruntime-node`
+  postinstall native download + `sharp`/libvips — classic CI breakers). **Those were
+  the "failed-build" emails**, misattributed to Cloudflare in the original handoff.
+  Cloudflare Pages posts no GitHub statuses for this repo, which is why nothing
+  Cloudflare-shaped ever showed up.
 
-**Fix applied (this session):** added a repo-root **`Dockerfile`** + **`.dockerignore`**
-+ **`static-server.mjs`** (zero-dependency Node static server binding
-`0.0.0.0:$PORT`). A Dockerfile at the root makes Railway build with Docker instead
-of Nixpacks, so **no `npm install` runs** — it copies only the runtime bundle
-(`index.html`, `data.js`, `enrichment.js`, `facets.js`, `vectors.bin`,
-`vectors-meta.json`, `assets/`) and serves it. Verified locally end-to-end:
-`docker build` succeeds, the container serves every bundle file with correct MIME
-types, 404s missing files, and blocks path traversal (403). Lockfile from `8e5421b`
-is now moot for the deploy (Docker path ignores it) but harmless to keep.
+**Resolution:** Railway is being **removed** (owner decision 2026-07-08). The
+Dockerfile / `static-server.mjs` / `.dockerignore` added earlier this session to fix
+the Railway build were **reverted** — Cloudflare Pages ignores Dockerfiles and needs
+none of it. The committed `package-lock.json` is kept (harmless).
 
-**Note the platform discrepancy for the owner:** §2 records Cloudflare as the target
-platform, but the live pipeline is Railway. The Dockerfile fix does not preclude
-moving to Cloudflare Pages later (a pure-static repo needs no build there). Decide
-which host is canonical and disconnect the other to avoid double-deploys.
+**Cloudflare Pages build hygiene (do this to keep it bulletproof):** the site is
+pure static — the Pages project should have **framework preset = None** and an
+**empty build command** so Pages never runs `npm install` (which would hit the same
+transformers/sharp native-dep breakage). Verify in the dashboard: Workers & Pages →
+`airtable-explorer` → Settings → Builds & deployments. Build output directory =
+repo root (`/`). If a `.node-version`/build is ever needed, the dev tooling should
+move to a subdir so it's off the deploy install path (see old hypothesis 2b).
 
 ### 🟡 NOT-A-BUG: local server exited with code 143
 
@@ -139,10 +139,11 @@ build, this was a local process). Restart anytime with `./start.command` or
 
 ## 6. Next steps, in order
 
-1. **~~Fix the Pages build (BUG-1).~~ DONE.** Real cause was Railway/Nixpacks, not
-   Cloudflare; fixed with a Dockerfile static-serve (see §5). Push and confirm the
-   next Railway build goes green. Owner: decide Railway vs Cloudflare as canonical
-   host (§5 note).
+1. **~~Fix the Pages build (BUG-1).~~ DONE.** The failing builds were a leftover
+   **Railway** integration, not Cloudflare (see §5). Railway is being removed;
+   Cloudflare Pages (`airtable-explorer` → teaching.straus.digital) is the real host
+   and is healthy. Keep the Pages project at framework=None / empty build command so
+   `npm install` never runs against the transformers/sharp native deps.
 2. **Semantic search on Cloudflare — small Worker (~60 lines, owner already leaning
    yes).** `GET /api/semantic?q=` → Workers AI `@cf/baai/bge-small-en-v1.5` embeds
    the query (keep `queryPrefix`!) → cosine over `vectors.bin` (fetch from the
